@@ -1,0 +1,31 @@
+html{
+	background:url(../img/style1-background.png) no-repeat center center fixed;
+	background-size: cover;
+}
+
+header{
+	height:10%;
+	width:100%;
+	background-color:#08088A;
+}
+
+footer{
+	height:10%;
+	width:100%;
+	text-align:center;
+	
+}
+
+body{
+	margin:0;
+	padding:0;
+}
+
+#big-logo{
+	
+}
+
+#content{
+	height:80%;
+	width:100%;
+}
