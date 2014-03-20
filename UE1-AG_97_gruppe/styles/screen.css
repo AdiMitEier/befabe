@@ -34,19 +34,21 @@ header h1{
 	font-family:Arial;
 }
 
-header button{
-	border-radius: 10px;
-	font-family:Arial;
-	font-weight:bold;
-	font-size: 1.3em;
-	color:white;
-	background-color:#FF8000;
-	border-color:#000;
-	border-style:solid;
-	padding:0.2em 1em 0.2em 1em;
-}
 
+/*Media Query for Screen Size > 32 em*/
 @media screen and (min-width:32em){
+	header button{
+		border-radius: 10px;
+		font-family:Arial;
+		font-weight:bold;
+		font-size: 1.2em;
+		color:white;
+		background-color:#FF8000;
+		border-color:#000;
+		border-style:solid;
+		padding:0.2em 1em 0.2em 1em;
+	}
+
 	#big-logo{
 		margin: auto 0 auto 2%;
 		float:left;
@@ -102,6 +104,33 @@ header button{
 	}
 }
 
+/*Media Query for Screen Size < 32 em*/
 @media screen and (max-width:32em){
+	header button{
+		border-radius: 10px;
+		font-family:Arial;
+		font-weight:bold;
+		font-size: 1.2em;
+		color:white;
+		background-color:#FF8000;
+		border-color:#000;
+		border-style:solid;
+		padding:0.2em 0em 0.2em 0em;
+	}
 
+	#big-logo{
+		margin: auto 0 auto 2%;
+		float:left;
+		margin-left:2%;
+	}
+
+	#quiz{
+		margin: auto 0 auto -0.2%;
+		float:left;
+	}
+
+	#sign-in{
+		float:right;
+		margin:auto 2% auto auto;
+	}
 }
