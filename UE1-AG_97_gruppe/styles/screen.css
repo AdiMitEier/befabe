@@ -34,6 +34,13 @@ header h1{
 	margin-left:20%;
 }
 
+.buttonIconRight {
+	float: right;
+	margin-right: 15px;
+}
+
+
+
 #question {
 		width:100%;
 		margin-top:7%;
@@ -44,7 +51,7 @@ header h1{
 #answer_button_not_selected {
 	width:100%;
 	background-color: #b9d6f0;
-	border-radius: 15px;
+	border-radius: 10px;
 	border: hidden;
 	color: #033058;
 	font-size: 1.2em;
@@ -54,7 +61,7 @@ header h1{
 #answer_button_selected {
 	width: 100%;
 	background-color: #033058;
-	border-radius: 15px;
+	border-radius: 10px;
 	border: hidden;
 	color: white;
 	font-size: 1.2em;
@@ -157,6 +164,20 @@ header h1{
 		margin-top: 2%;
 		margin-left: 2%;
 	}
+	
+	#nextButton {
+		width: auto;
+		min-width: 150px;
+		background-color: #36d344;
+		border-color: #116d01;
+		border-width: 1px;
+		border-radius: 5px;
+		border-style: solid;
+		font-size: 1.1em;
+		font-weight: bold;
+		color: white;
+		float: right;
+	}
 }
 
 /*Media Query for Screen Size < 32 em*/
@@ -240,5 +261,19 @@ header h1{
 		width: 100%;
 		float: left;
 		margin-top: 2%;
+	}
+	
+	#nextButton {
+		width: 100%;
+		min-width: 150px;
+		background-color: #36d344;
+		border-color: #116d01;
+		border-width: 1px;
+		border-radius: 5px;
+		border-style: solid;
+		font-size: 1.1em;
+		font-weight: bold;
+		color: white;
+		float: right;
 	}
 }
