@@ -37,6 +37,15 @@ header h1{
 	margin-left:20%;
 }
 
+input {
+	width:70%;
+	float:right;
+}
+
+#register_entry{
+	margin-top:4%;
+}
+
 .buttonIconRight {
 	float: right;
 	margin-right: 15px;
@@ -123,9 +132,16 @@ header h1{
 		height:80%;
 		width:100%;
 	}
-
+	
+	#register_content{
+		margin-top:3.5%;
+		width:50%;
+		margin-left:25%;
+		margin-right:25%;
+		/*background-color:#FF0000;*/
+	}
+	
 	#table_content{
-		width:100%;
 		width:80%;
 		margin-left:10%;
 		margin-right:10%;
@@ -231,9 +247,16 @@ header h1{
 		height:80%;
 		width:100%;
 	}
+	
+	#register_content{
+		margin-top:3.5%;
+		width:50%;
+		margin-left:10%;
+		margin-right:10%;
+		/*background-color:#FF0000;*/
+	}
 
 	#table_content{
-		width:100%;
 		width:80%;
 		margin-left:10%;
 		margin-right:10%;
