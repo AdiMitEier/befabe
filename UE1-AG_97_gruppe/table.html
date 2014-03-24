@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta name="AG_97" content="Abgabe1_Quiz"/>
@@ -27,7 +30,7 @@
 		<div id="info">
 			<div id="player1">
 				Spieler 1
-				<div id="checkboxes">
+				<div class="checkboxes">
 					<img src="img/correct-white.png" alt="answer_correct"/>
 					<img src="img/incorrect-white.png" alt="answer_incorrect"/>
 					<img src="img/unknown-white.png" alt="answer_unknown"/>
@@ -35,7 +38,7 @@
 			</div>
 			<div id="player2">
 				Spieler 2
-				<div id="checkboxes">
+				<div class="checkboxes">
 					<img src="img/correct-white.png" alt="answer_correct"/>
 					<img src="img/correct-white.png" alt="answer_correct"/>
 					<img src="img/unknown-white.png" alt="answer_unknown"/>
@@ -49,24 +52,24 @@
 			Welche zwei LVAs werden im Modul EWA zusammengefasst?	
 		</div>
 		<div id="table">
-			<div id="columnLeft">
-				<button id="answer_button_not_selected" value="IT Strategie">IT Strategie</button>
+			<div class="columnLeft">
+				<button class="answerButtonNotSelected" value="IT Strategie">IT Strategie</button>
 			</div>
-			<div id="columnRight">
-				<button id="answer_button_selected" value="Web Engineering">Web Engineering</button>
+			<div class="columnRight">
+				<button class="answerButtonSelected" value="Web Engineering">Web Engineering</button>
 			</div>
-			<div id="columnLeft">
-				<button id="answer_button_selected" value="Semistrukturierte Daten">Semistrukturierte Daten</button>
+			<div class="columnLeft">
+				<button class="answerButtonSelected" value="Semistrukturierte Daten">Semistrukturierte Daten</button>
 			</div>
-			<div id="columnRight">
-				<button id="answer_button_not_selected" value="Objektorientierte Modellierung">Objektorientierte Modellierung</button>
+			<div class="columnRight">
+				<button class="answerButtonNotSelected" value="Objektorientierte Modellierung">Objektorientierte Modellierung</button>
 			</div>
-			<div id="columnRight">
+			<div class="columnRight">
 				<button id="nextButton">weiter
-					<img class="buttonIconRight" src="img/white-arrow-right.png"/>
+					<img class="buttonIconRight" src="img/white-arrow-right.png" alt="icon next"/>
 				</button>
 			</div>
-			<div id="columnLeft">
+			<div class="columnLeft">
 				Verbleibende Zeit: 00:19 <br/>
 				<meter value="19" min="0" max="30" id="countdownMeter">00:19</meter>
 				<div id="lastGame">
