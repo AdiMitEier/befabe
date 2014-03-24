@@ -44,7 +44,7 @@ header h1{
 
 .buttonIconRight {
 	float: right;
-	margin-right: 15px;
+	margin-right: 5%;
 }
 
 
@@ -96,6 +96,11 @@ header h1{
 
 #login-positioning {
 	margin-top:10%;
+}
+
+#pflichtfelder {
+	margin-top:4em;
+	text-align:center;
 }
 
 /*Media Query for Screen Size > 32 em*/
@@ -229,6 +234,22 @@ header h1{
 		float: right;
 	}
 	
+	#registerButtonActive{
+		margin-top:2%;
+		margin-left:60%;
+		min-width: 150px;
+		background-color: #36d344;
+		border-color: #116d01;
+		border-width: 1px;
+		border-radius: 5px;
+		border-style: solid;
+		font-size: 1.1em;
+		font-weight: bold;
+		color: white;
+		float: right;
+		padding: 0.2em 0.1em 0.2em 0.5em;
+	}
+	
 	#login-positioning {
 		margin-top:10%;
 	}
@@ -357,6 +378,22 @@ header h1{
 		font-weight: bold;
 		color: white;
 		float: right;
+	}
+	
+	#registerButtonActive{
+		margin-top:2%;
+		margin-left:60%;
+		min-width: 150px;
+		background-color: #36d344;
+		border-color: #116d01;
+		border-width: 1px;
+		border-radius: 5px;
+		border-style: solid;
+		font-size: 1.1em;
+		font-weight: bold;
+		color: white;
+		float: right;
+		padding: 0.2em 0.1em 0.2em 0.5em;
 	}
 	
 	#login-positioning {
