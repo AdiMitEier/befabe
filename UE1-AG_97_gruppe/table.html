@@ -9,6 +9,28 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/framework.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+	
+	<script type="text/javascript">
+		
+		
+			var count = 30;
+			var counter = setInterval(timer,1000); // 1000 ms = 1s
+			
+			function timer() {
+				count = count-1;
+				if (count < 0) {
+					count = 30;	// or stop ?
+				}
+				$("#timeMMSS").text(secToMMSS(count));
+				//document.getElementById("timeMMSS").innerHTML = secToMMSS(count);
+				$("#countdownMeter").attr("value",count);
+				$("#countdownMeter").text(secToMMSS(count));
+				
+			}
+		
+		
+		
+	</script>
 </head>
 
 <body>
@@ -68,8 +90,8 @@
 				</button>
 			</div>
 			<div class="columnLeft">
-				Verbleibende Zeit: 00:19 <br/>
-				<meter value="19" min="0" max="30" id="countdownMeter">00:19</meter>
+				Verbleibende Zeit: <span id="timeMMSS">00:30</span> <br/>
+				<meter value="30" min="0" max="30" id="countdownMeter">00:30</meter>
 				<div id="lastGame">
 					Letztes Spiel: Nie
 				</div>
