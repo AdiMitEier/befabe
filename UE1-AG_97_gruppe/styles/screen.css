@@ -27,6 +27,10 @@ footer{
 	/*margin-top:50%*/
 }
 
+fieldset{
+	border:none;
+}
+
 h1{
 	margin:0;
 	padding:0;
