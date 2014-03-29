@@ -8,6 +8,38 @@
 	<link rel="stylesheet" type="text/css" href="styles/screen.css"/>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/framework.js"></script>
+	<script type="text/javascript">
+
+
+		function validateSubmit(){
+			if(benutzername.checkValidity() && passwort.checkValidity()) {
+				document.getElementById('registerButton').style.backgroundColor = '#36d344';
+			} else {
+				document.getElementById('registerButton').style.backgroundColor = '#DCDCDC';
+			}
+		}
+
+		function test(){
+			alert(test);
+		}
+
+
+		function validateDate(selector){
+			var dtRegex = new RegExp(/\b\d{1,2}[\.]\d{1,2}[\.]\d{4}\b/);
+			if(dtRegex.test(selector.value) == false){
+				var tmp = getNormalizedDateString(selector);
+			}
+
+			if(tmp == selector.value){
+				document.getElementById('birthday_format').style.display = 'inline';
+			}else{
+				document.getElementById('birthday_format').style.display = 'none';
+				geburtstag.value = tmp;
+			}
+			
+		}
+
+	</script>
 </head>
 
 <body>
@@ -23,53 +55,58 @@
 		</div>
 	</header>
 	<div id="content">
-	<form>
-		<div id="register_content">
-			<h2>Persoenliche Daten</h2>
-			<div class="register_entry">
-				<label for="vorname">Vorname</label>
-				<input name="vorname" id="vorname" type="text"/>
-			</div>
-			
-			<div class="register_entry">
-				<label for="nachname">Nachname</label>
-				<input name="nachname" id="nachname" type="text"/>
-			</div>
-			
-			<div class="register_entry">
-				<label for="geburtstag">Geburtstag</label>
-				<input name="geburtstag" id="geburtstag" type="text"/>
-			</div>
-			
-			<div class="register_entry">
-				<label for="geschlecht">Geschlecht</label>
-				<select name="geschlecht" id="geschlecht">
-					<option value="Maennlich">Maennlich</option>
-					<option value="Weiblich">Weiblich</option>
-				</select>
-			</div>
+	<form id="register_form" action="" onchange="validateSubmit()" onload="validateSubmit()">
+		<fieldset>
+			<div id="register_content">
+				<h2>Persoenliche Daten</h2>
+				<div class="register_entry">
+					<label for="vorname">Vorname</label>
+					<input name="vorname" id="vorname" type="text" autofocus/>
+				</div>
+				
+				<div class="register_entry">
+					<label for="nachname">Nachname</label>
+					<input name="nachname" id="nachname" type="text"/>
+				</div>
+				
+				<div class="register_entry">
+					<label for="geburtstag">Geburtstag</label>
+					<input name="geburtstag" id="geburtstag" type="date" onchange="validateDate(geburtstag)"  aria-describedby="birthday_format"/>
+					<span id="birthday_format" class="help" >Ihre Eingabe ist keine gueltige Datumseingabe.</span> 
+				</div>
+				
+				<div class="register_entry">
+					<label for="geschlecht">Geschlecht</label>
+					<select name="geschlecht" id="geschlecht">
+						<option value="Maennlich">Maennlich</option>
+						<option value="Weiblich">Weiblich</option>
+					</select>
+				</div>
 
-			<h2 id="login-positioning">Login Daten</h2>
+				<h2 id="login-positioning">Login Daten</h2>
 
-			<div class="register_entry">
-				<label for="benutzername">Benutzername*</label>
-				<input name="benutzername" id="benutzername" type="text"/>
-			</div>
-			
-			<div class="register_entry">
-				<label for="passwort">Passwort*</label>
-				<input name="passwort" id="passwort" type="text"/>
-			</div>
-			
-			<button type="button" id="registerButtonActive">
-				Registrieren
-				<img class="buttonIconRight" alt="continue_with_registration" src="img/white-arrow-right.png"/>
-			</button>
-			<div id="pflichtfelder">
-				Mit "*" gekennzeichnete Felder sind Pflichtfelder
-			</div>
-		</div>	
-		</form>
+				<div class="register_entry">
+					<label for="benutzername">Benutzername*</label>
+					<input name="benutzername" id="benutzername" type="text" minlength="4" maxlength="8" pattern="[0-9a-zA-Z].{3,7}" required aria-required="true" aria-describedby="username-format" />
+					<span id="username-format" class="help" >Bitte verwenden Sie mindestens 4 und maximal 8 Zeichen. </span>
+				</div>
+				
+				<div class="register_entry">
+					<label for="passwort">Passwort*</label>
+					<input name="passwort" id="passwort" type="text"  type="text" minlength="4" maxlength="8"  pattern="[0-9a-zA-Z].{3,7}" required aria-required="true" aria-describedby="userpasswd-format" />
+					<span id="userpasswd-format" class="help">Bitte verwenden Sie mindestens 4 und maximal 8 Zeichen. </span>
+				</div>
+				
+				<button type="submit" id="registerButton" form="register_form">
+					Registrieren
+					<img class="buttonIconRight" alt="continue with registration" src="img/white-arrow-right.png"/>
+				</button>
+				<div id="pflichtfelder">
+					Mit "*" gekennzeichnete Felder sind Pflichtfelder
+				</div>
+			</div>	
+		</fieldset>
+	</form>
 	</div>
 	<footer>
 		<div id="copyright">

@@ -235,11 +235,11 @@ header h1{
 		float: right;
 	}
 	
-	#registerButtonActive{
+	#registerButton{
 		margin-top:2%;
 		margin-left:60%;
 		min-width: 150px;
-		background-color: #36d344;
+		background-color: #DCDCDC;
 		border-color: #116d01;
 		border-width: 1px;
 		border-radius: 5px;
@@ -251,6 +251,27 @@ header h1{
 		padding: 0.2em 0.1em 0.2em 0.5em;
 	}
 	
+	.help {
+		display: none;
+		font-size:70%;
+
+	}
+
+	.birthdate {
+		display: inline-block;
+	}
+
+	input:required {
+		-moz-box-shadow: none;
+	    border-color:hsl(0, 00%, 00%);
+	}
+
+	input:focus:invalid + .help{
+		display: inline-block;
+		border-color:hsl(0, 50%, 50%);
+	}
+
+
 	#login-positioning {
 		margin-top:10%;
 	}
@@ -377,11 +398,11 @@ header h1{
 		float: right;
 	}
 	
-	#registerButtonActive{
+	#registerButton{
 		margin-top:2%;
 		margin-left:60%;
 		min-width: 150px;
-		background-color: #36d344;
+		background-color: #DCDCDC;
 		border-color: #116d01;
 		border-width: 1px;
 		border-radius: 5px;
@@ -393,6 +414,26 @@ header h1{
 		padding: 0.2em 0.1em 0.2em 0.5em;
 	}
 	
+	.help {
+		display: none;
+		font-size:70%;
+
+	}
+
+	.birthdate {
+		display: inline-block;
+	}
+
+	input:required {
+		-moz-box-shadow: none;
+	    border-color:hsl(0, 00%, 00%);
+	}
+
+	input:focus:invalid + .help{
+		display: inline-block;
+		border-color:hsl(0, 50%, 50%);
+	}
+
 	#login-positioning {
 		margin-top:20%;
 	}
