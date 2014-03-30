@@ -71,23 +71,25 @@
 			Welche zwei LVAs werden im Modul EWA zusammengefasst?	
 		</div>
 		<div id="table">
-			<div class="columnLeft">
-				<button class="answerButtonNotSelected" value="IT Strategie">IT Strategie</button>
-			</div>
-			<div class="columnRight">
-				<button class="answerButtonSelected" value="Web Engineering">Web Engineering</button>
-			</div>
-			<div class="columnLeft">
-				<button class="answerButtonSelected" value="Semistrukturierte Daten">Semistrukturierte Daten</button>
-			</div>
-			<div class="columnRight">
-				<button class="answerButtonNotSelected" value="Objektorientierte Modellierung">Objektorientierte Modellierung</button>
-			</div>
-			<div class="columnRight">
-				<button id="nextButton">weiter
-					<img class="buttonIconRight" src="img/white-arrow-right.png" alt="icon next"/>
-				</button>
-			</div>
+			<form id="table_form" action="">
+				<div class="columnLeft">
+					<button class="answerButtonNotSelected" value="IT Strategie">IT Strategie</button>
+				</div>
+				<div class="columnRight">
+					<button class="answerButtonSelected" value="Web Engineering">Web Engineering</button>
+				</div>
+				<div class="columnLeft">
+					<button class="answerButtonSelected" value="Semistrukturierte Daten">Semistrukturierte Daten</button>
+				</div>
+				<div class="columnRight">
+					<button class="answerButtonNotSelected" value="Objektorientierte Modellierung">Objektorientierte Modellierung</button>
+				</div>
+				<div class="columnRight">
+					<button id="nextButton">weiter
+						<img class="buttonIconRight" src="img/white-arrow-right.png" alt="icon next"/>
+					</button>
+				</div>
+			</form>
 			<div class="columnLeft">
 				Verbleibende Zeit: <span id="timeMMSS">00:30</span> <br/>
 				<meter value="30" min="0" max="30" id="countdownMeter">00:30</meter>
