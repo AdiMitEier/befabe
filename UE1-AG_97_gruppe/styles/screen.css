@@ -256,13 +256,11 @@ header h1{
 	}
 	
 	.help {
+		margin-right: 20%;
+		color: #B20000;
 		display: none;
-		font-size:70%;
+		font-size:80%;
 
-	}
-
-	.birthdate {
-		display: inline-block;
 	}
 
 	input:required {
@@ -419,14 +417,13 @@ header h1{
 	}
 	
 	.help {
+		margin-right: 20%;
+		color: #B20000;
 		display: none;
-		font-size:70%;
+		font-size:80%;
 
 	}
 
-	.birthdate {
-		display: inline-block;
-	}
 
 	input:required {
 		-moz-box-shadow: none;
