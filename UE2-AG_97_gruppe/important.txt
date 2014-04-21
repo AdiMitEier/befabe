@@ -8,4 +8,4 @@ gitignore denke ich passt so, glaub die .settings kann man auch drin lassen, ihr
 
 Projekt laufen lassen:
 Projekt in Eclipse rechtsklicken: Run as -> Run on Server, dort die Installationsschritte für Apache Tomcat v7.0 vornehmen, da gibts eh so ein download und install button direkt in Eclipse
-hab den Deployment Descriptor jetzt mal soweit aufgebaut, dass er Servlet refernziert und auf die start.html leitet wenn man die Applikation am Server laufen lasst
+hab den Deployment Descriptor (web.xml) jetzt mal soweit aufgebaut, dass er Servlet refernziert und auf die start.html leitet wenn man die Applikation am Server laufen lasst
