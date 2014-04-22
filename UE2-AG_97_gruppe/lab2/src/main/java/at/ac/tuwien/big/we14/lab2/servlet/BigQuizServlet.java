@@ -40,7 +40,7 @@ public class BigQuizServlet extends HttpServlet {
 		questiondataprovider = quizfactory.createQuestionDataProvider();
 		categories = questiondataprovider.loadCategoryData();
 		//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
-		currentCategory = categories.get((int)(Math.random()*categories.size()-1));
+		currentCategory = categories.get((int)(Math.random()*categories.size()));
 		questionCounter=0;
 		roundCounter=0;
 
@@ -66,7 +66,7 @@ public class BigQuizServlet extends HttpServlet {
 			//nach der dritten Frage wird die Runde beendet, dh die kategorie gewechselt und der Rundencounter um 1 erhoeht
 			if(roundCounter<4){
 				dispatcher = getServletContext().getRequestDispatcher("/roundcomplete.jsp");
-				currentCategory = categories.get((int)(Math.random()*categories.size()-1));
+				currentCategory = categories.get((int)(Math.random()*categories.size()));
 				questionCounter=0;
 				roundCounter++;
 			} else {
