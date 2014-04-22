@@ -46,7 +46,7 @@
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
                 
-                <form id="questionform" action="question.jsp" method="post">
+                <form id="questionform" action="BigQuizServlet" method="post">
                 	<jsp:useBean id="question" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleQuestion"/>
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext"><%=question.getText()%></p>

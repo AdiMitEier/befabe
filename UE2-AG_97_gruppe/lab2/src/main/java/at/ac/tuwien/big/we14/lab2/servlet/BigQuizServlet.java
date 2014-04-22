@@ -39,8 +39,8 @@ public class BigQuizServlet extends HttpServlet {
 
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response){
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{	
@@ -49,7 +49,6 @@ public class BigQuizServlet extends HttpServlet {
 			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
 			Category category = categories.get((int)(Math.random()*categories.size()-1));
 			Question question = category.getQuestions().get((int)Math.random()*category.getQuestions().size());
-			question.setText("Hallo");
 			session.setAttribute("question",question);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
 			dispatcher.forward(request, response);
