@@ -19,6 +19,7 @@ import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
 import at.ac.tuwien.big.we14.lab2.api.QuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.impl.JSONQuestionDataProvider;
 import at.ac.tuwien.big.we14.lab2.api.impl.ServletQuizFactory;
+import at.ac.tuwien.big.we14.lab2.api.impl.SimplePlayer;
 import at.ac.tuwien.big.we14.lab2.api.impl.SimpleQuizFactory;
 
 @WebServlet(name="BigQuiz", urlPatterns = {"/BigQuizServlet"})
@@ -41,6 +42,10 @@ public class BigQuizServlet extends HttpServlet {
 		categories = questiondataprovider.loadCategoryData();
 		questionCounter=0;
 		roundCounter=0;
+		player1 = new SimplePlayer("Ich");
+		player2 = new SimplePlayer("Computer");
+		player1.setWonRounds(0);
+		player2.setWonRounds(0);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -53,9 +58,8 @@ public class BigQuizServlet extends HttpServlet {
 		if(questionCounter==0){
 			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
 			currentCategory = categories.get((int)(Math.random()*categories.size()));
-		}
-		questionCounter++;
-		if(questionCounter<3){
+		}	
+		if(questionCounter<2){
 			//solange man weniger als 3 Fragen beantwortet hat wird immer eine Frage aus derselben Kategorie gestellt
 			//abhaengig von der Kategorie ein der Fragen zufaellig auswaehlen
 			int numberOfquestions = currentCategory.getQuestions().size();
@@ -63,13 +67,30 @@ public class BigQuizServlet extends HttpServlet {
 			//question und currentCategory an das session atrribut geben
 			session.setAttribute("question",question);
 			session.setAttribute("category",currentCategory);
+			session.setAttribute("player1",player1);
+			session.setAttribute("player2", player2);
 			//und weitere Verarbeitung an das jsp
 			dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
-			
+			questionCounter++;
 		}else{
 			//nach der dritten Frage wird die Runde beendet, dh die kategorie gewechselt und der Rundencounter um 1 erhoeht
-			if(roundCounter<5){
+			if(roundCounter<4){
+				if(player1.getRightQuestions()>player2.getRightQuestions()){
+					//wenn Spieler 1 mehr richtige Antworten hat
+					player1.setWonRounds(player1.getWonRounds()+1);
+				} else {
+					if(player1.getRightQuestions()==player2.getRightQuestions()){
+						//wenn Spieler 1 und Spieler 2 gleich viele Antworten haben
+						player1.setWonRounds(player1.getWonRounds()+1);
+						player2.setWonRounds(player2.getWonRounds()+1);
+					} else {
+						//wenn Spieler 2 mehr richtige Antworten hat
+						player2.setWonRounds(player2.getWonRounds()+1);
+					}
+				}
 				dispatcher = getServletContext().getRequestDispatcher("/roundcomplete.jsp");
+				player1.resetRightQuestions();
+				player2.resetRightQuestions();
 				questionCounter=0;
 				roundCounter++;
 			} else {
@@ -77,6 +98,10 @@ public class BigQuizServlet extends HttpServlet {
 				dispatcher = getServletContext().getRequestDispatcher("/finish.jsp");
 				roundCounter=0;
 				questionCounter=0;
+				player1.setWonRounds(0);
+				player2.setWonRounds(0);
+				player1.resetRightQuestions();
+				player2.resetRightQuestions();
 			}
 		}
 		dispatcher.forward(request, response);

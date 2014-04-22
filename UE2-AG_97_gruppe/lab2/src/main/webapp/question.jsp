@@ -28,7 +28,9 @@
             <section id="roundinfo" aria-labelledby="roundinfoheading">
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info">
-                    <span id="player1name">Spieler 1</span>
+                    <jsp:useBean id="player1" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimplePlayer"/>
+        			<jsp:useBean id="player2" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimplePlayer"/>
+                    <span id="player1name"><%=player1.getName() %></span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
@@ -36,7 +38,7 @@
                     </ul>
                 </div>
                 <div id="player2info">
-                    <span id="player2name">Spieler 2</span>
+                    <span id="player2name"><%=player2.getName() %></span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class="correct">Richtig</span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="correct">Richtig</span></li>
@@ -44,7 +46,7 @@
                     </ul>
                 </div>
                 <jsp:useBean id="category" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleCategory"/>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span><%=category.getName() %><%=category.getQuestions().size() %></div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span><%=category.getName() %></div>
             </section>
             
             <!-- Question -->

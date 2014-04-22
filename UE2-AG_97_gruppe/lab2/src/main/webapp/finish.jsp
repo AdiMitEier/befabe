@@ -26,17 +26,20 @@
                 <h2 id="roundwinnerheading" class="accessibility">Endstand</h2>
                 <p class="roundwinnermessage">Spieler 2 gewinnt!</p>
             </section>
-        
+        	
+        	<jsp:useBean id="player1" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimplePlayer"/>
+        	<jsp:useBean id="player2" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimplePlayer"/>
+        	
             <!-- round info -->    
             <section id="roundinfo" aria-labelledby="roundinfoheading">
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info" class="playerinfo">
-                    <span id="player1name" class="playername">Spieler 1</span>
-                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
+                    <span id="player1name" class="playername"><%=player1.getName() %></span>
+                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds"><%=player1.getWonRounds() %></span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
-                    <span id="player2name" class="playername">Spieler 2</span>
-                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
+                    <span id="player2name" class="playername"><%=player2.getName() %></span>
+                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%=player2.getWonRounds() %></span></p>
                 </div>
                 <a id="next" href="question.jsp" accesskey="n">Neues Spiel</a>
             </section>

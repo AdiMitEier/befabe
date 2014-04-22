@@ -4,37 +4,51 @@ import at.ac.tuwien.big.we14.lab2.api.Player;
 
 public class SimplePlayer implements Player {
 	
-	private String firstname;
-	private String lastname;
+	private String name;
+	private int wonRounds=0;
+	private int rightQuestions=0;
 	
 	public SimplePlayer(){
-		this.firstname="";
-		this.lastname="";
+		this.name="";
 	}
 	
-	public SimplePlayer(String firstname, String lastname){
-		this.firstname = firstname;
-		this.lastname = lastname;
+	public SimplePlayer(String name){
+		this.name = name;
+
 	}
 	
 	@Override
-	public String getFirstname() {
-		return firstname;
+	public String getName() {
+		return name;
 	}
 
 	@Override
-	public String getLastname() {
-		return lastname;
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getWonRounds(){
+		return wonRounds;
+	}
+	
+	public void setWonRounds(int wonRounds){
+		this.wonRounds=wonRounds;
 	}
 
 	@Override
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public int getRightQuestions() {
+		return rightQuestions;
 	}
 
 	@Override
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void incrementRightQuestions() {
+		rightQuestions++;
+		
+	}
+
+	@Override
+	public void resetRightQuestions() {
+		rightQuestions=0;		
 	}
 
 }

@@ -2,8 +2,11 @@ package at.ac.tuwien.big.we14.lab2.api;
 
 public interface Player {
 	
-	public String getFirstname();
-	public String getLastname();
-	public void setFirstname(String firstname);
-	public void setLastname(String lastname);
+	public String getName();
+	public void setName(String name);
+	public int getWonRounds();
+	public void setWonRounds(int wonRounds);
+	public int getRightQuestions();
+	public void incrementRightQuestions();
+	public void resetRightQuestions();
 }
