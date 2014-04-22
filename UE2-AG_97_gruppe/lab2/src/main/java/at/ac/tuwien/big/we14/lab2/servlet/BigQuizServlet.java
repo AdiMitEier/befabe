@@ -59,6 +59,7 @@ public class BigQuizServlet extends HttpServlet {
 			Question question = currentCategory.getQuestions().get((int)Math.random()*currentCategory.getQuestions().size());
 			//question an das session atrribut geben
 			session.setAttribute("question",question);
+			session.setAttribute("category",currentCategory);
 			//und weitere Verarbeitung an das jsp
 			dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
 			questionCounter++;
@@ -73,6 +74,7 @@ public class BigQuizServlet extends HttpServlet {
 				//nach der 5ten Runde hat man das Spiel beendet und kann im finish.jsp ein neues waehlen
 				dispatcher = getServletContext().getRequestDispatcher("/finish.jsp");
 				roundCounter=0;
+				questionCounter=0;
 			}
 		}
 		dispatcher.forward(request, response);

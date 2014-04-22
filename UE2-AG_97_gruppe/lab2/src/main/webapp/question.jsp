@@ -43,7 +43,8 @@
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
                     </ul>
                 </div>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Blubb Platzhalter Kategorie</div>
+                <jsp:useBean id="category" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleCategory"/>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span><%=category.getName() %></div>
             </section>
             
             <!-- Question -->
