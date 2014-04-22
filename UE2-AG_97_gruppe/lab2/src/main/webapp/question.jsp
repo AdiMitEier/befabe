@@ -21,6 +21,7 @@
                 <li><a id="logoutlink" title="Klicke hier um dich abzumelden" href="#" accesskey="l">Abmelden</a></li>
             </ul>
         </nav>
+
         
         <!-- round info -->
         <section role="main">
@@ -42,13 +43,13 @@
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
                     </ul>
                 </div>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Sport</div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Blubb Platzhalter Kategorie</div>
             </section>
             
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
                 <form id="questionform" action="BigQuizServlet" method="post">
-                	<jsp:useBean id="question" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleQuestion"/>
+                    <jsp:useBean id="question" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleQuestion"/>
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext"><%=question.getText()%></p>
                     <%int i = 1;%>
