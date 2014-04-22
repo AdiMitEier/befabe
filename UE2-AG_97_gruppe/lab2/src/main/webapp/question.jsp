@@ -47,16 +47,14 @@
             <section id="question" aria-labelledby="questionheading">
                 
                 <form id="questionform" action="question.jsp" method="post">
+                	<jsp:useBean id="question" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleQuestion"/>
                     <h2 id="questionheading" class="accessibility">Frage</h2>
-                    <p id="questiontext">Welche zwei LVAs werden im Model EWA zusammengefasst?</p>
+                    <p id="questiontext"><%=question.getText()%></p>
                     <ul id="answers">
                         <li><input id="option1" type="checkbox"/><label for="option1">IT Strategie</label></li>
                         <li><input id="option2" type="checkbox"/><label for="option2">Web Engineering</label></li>
                         <li><input id="option3" type="checkbox"/><label for="option3">Semistrukturierte Daten</label></li>
-                        <li><input id="option4" type="checkbox"/><label for="option4">Objektorientierte Modellierung</label></li>
-                    	<jsp:expression>
-                    	
-                    	</jsp:expression>
+                        <li><input id="option4" type="checkbox"/><label for="option4">Objektorientierte Modellierung</label></li>       	
                     </ul>
                     <input id="timeleftvalue" type="hidden" value="100"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>
