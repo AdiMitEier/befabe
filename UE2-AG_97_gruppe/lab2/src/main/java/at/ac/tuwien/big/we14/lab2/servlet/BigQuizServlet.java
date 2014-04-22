@@ -41,7 +41,6 @@ public class BigQuizServlet extends HttpServlet {
 		categories = questiondataprovider.loadCategoryData();
 		questionCounter=0;
 		roundCounter=0;
-
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -55,16 +54,18 @@ public class BigQuizServlet extends HttpServlet {
 			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
 			currentCategory = categories.get((int)(Math.random()*categories.size()));
 		}
-		if(questionCounter<2){
+		questionCounter++;
+		if(questionCounter<3){
 			//solange man weniger als 3 Fragen beantwortet hat wird immer eine Frage aus derselben Kategorie gestellt
 			//abhaengig von der Kategorie ein der Fragen zufaellig auswaehlen
-			Question question = currentCategory.getQuestions().get((int)Math.random()*currentCategory.getQuestions().size());
+			int numberOfquestions = currentCategory.getQuestions().size();
+			Question question = currentCategory.getQuestions().get((int) (Math.random()*numberOfquestions));
 			//question und currentCategory an das session atrribut geben
 			session.setAttribute("question",question);
 			session.setAttribute("category",currentCategory);
 			//und weitere Verarbeitung an das jsp
 			dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
-			questionCounter++;
+			
 		}else{
 			//nach der dritten Frage wird die Runde beendet, dh die kategorie gewechselt und der Rundencounter um 1 erhoeht
 			if(roundCounter<5){
@@ -72,7 +73,7 @@ public class BigQuizServlet extends HttpServlet {
 				questionCounter=0;
 				roundCounter++;
 			} else {
-				//nach der 5ten Runde hat man das Spiel beendet und kann im finish.jsp ein neues waehlen
+				//nach der 5ten Runde hat man das Spiel beendet und kann im finish.jsp ein neues Spiel waehlen
 				dispatcher = getServletContext().getRequestDispatcher("/finish.jsp");
 				roundCounter=0;
 				questionCounter=0;

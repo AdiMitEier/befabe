@@ -20,9 +20,14 @@
         </nav>
         
         <section role="main" id="quiz">
-        <form id="questionform" action="BigQuizServlet" method="post">
-          <input id="startgame" type="submit" value="Quiz starten"/>
-         </form>
+       	<form id="questionform" action="BigQuizServlet" method="post">
+       		<input type="submit" id="startgame" value="Quiz starten"/>
+       	</form>
+       
+        <!-- 
+	       <a id="startgame" href="question.jsp">Quiz starten</a>
+	       
+	      -->
         </section>
 
         <!-- footer -->

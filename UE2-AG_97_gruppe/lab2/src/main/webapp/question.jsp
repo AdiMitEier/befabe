@@ -44,7 +44,7 @@
                     </ul>
                 </div>
                 <jsp:useBean id="category" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleCategory"/>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span><%=category.getName() %></div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span><%=category.getName() %><%=category.getQuestions().size() %></div>
             </section>
             
             <!-- Question -->
