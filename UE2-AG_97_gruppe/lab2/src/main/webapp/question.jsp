@@ -1,3 +1,5 @@
+<%@page import="at.ac.tuwien.big.we14.lab2.api.Choice"%>
+<%@page import="at.ac.tuwien.big.we14.lab2.api.impl.SimpleChoice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
@@ -45,16 +47,16 @@
             
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
-                
                 <form id="questionform" action="BigQuizServlet" method="post">
                 	<jsp:useBean id="question" scope="session" class="at.ac.tuwien.big.we14.lab2.api.impl.SimpleQuestion"/>
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext"><%=question.getText()%></p>
-                    <ul id="answers">
-                        <li><input id="option1" type="checkbox"/><label for="option1">IT Strategie</label></li>
-                        <li><input id="option2" type="checkbox"/><label for="option2">Web Engineering</label></li>
-                        <li><input id="option3" type="checkbox"/><label for="option3">Semistrukturierte Daten</label></li>
-                        <li><input id="option4" type="checkbox"/><label for="option4">Objektorientierte Modellierung</label></li>       	
+                    <%int i = 1;%>
+                    <ul id="answers">     	
+                    	<%for(Choice choice : question.getAllChoices()) {%>
+                    		<li><input id=<%="option"+i %> type="checkbox"/><label for=<%="option"+i %>><%=choice.getText() %></label></li>
+	                        <%i++; %>
+	                       <%}%>
                     </ul>
                     <input id="timeleftvalue" type="hidden" value="100"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>

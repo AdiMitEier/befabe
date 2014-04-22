@@ -48,8 +48,11 @@ public class BigQuizServlet extends HttpServlet {
 			HttpSession session = request.getSession(true);
 			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
 			Category category = categories.get((int)(Math.random()*categories.size()-1));
+			//abhaengig von der Kategorie ein der Fragen zufaellig auswaehlen
 			Question question = category.getQuestions().get((int)Math.random()*category.getQuestions().size());
+			//question an das session atrribut geben
 			session.setAttribute("question",question);
+			//und weitere Verarbeitung an das jsp
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
 			dispatcher.forward(request, response);
 		//}
