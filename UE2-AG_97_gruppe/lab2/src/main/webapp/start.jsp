@@ -20,7 +20,7 @@
         </nav>
         
         <section role="main" id="quiz">
-          <a id="startgame" href="question.html">Quiz starten</a>
+          <a id="startgame" href="question.jsp">Quiz starten</a>
         </section>
 
         <!-- footer -->

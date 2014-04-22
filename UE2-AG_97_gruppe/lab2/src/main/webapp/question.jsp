@@ -46,7 +46,7 @@
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
                 
-                <form id="questionform" action="question.html" method="post">
+                <form id="questionform" action="question.jsp" method="post">
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext">Welche zwei LVAs werden im Model EWA zusammengefasst?</p>
                     <ul id="answers">
@@ -54,6 +54,9 @@
                         <li><input id="option2" type="checkbox"/><label for="option2">Web Engineering</label></li>
                         <li><input id="option3" type="checkbox"/><label for="option3">Semistrukturierte Daten</label></li>
                         <li><input id="option4" type="checkbox"/><label for="option4">Objektorientierte Modellierung</label></li>
+                    	<jsp:expression>
+                    	
+                    	</jsp:expression>
                     </ul>
                     <input id="timeleftvalue" type="hidden" value="100"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>

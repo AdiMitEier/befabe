@@ -24,6 +24,8 @@ public abstract class QuizFactory {
 	public abstract Question createQuestion();
 	
 	public abstract Choice createChoice();
+	
+	public abstract Player createPlayer();
 
 	public abstract QuestionDataProvider createQuestionDataProvider();
 

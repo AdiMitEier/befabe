@@ -12,6 +12,7 @@ package at.ac.tuwien.big.we14.lab2.api.impl;
 
 import at.ac.tuwien.big.we14.lab2.api.Category;
 import at.ac.tuwien.big.we14.lab2.api.Choice;
+import at.ac.tuwien.big.we14.lab2.api.Player;
 import at.ac.tuwien.big.we14.lab2.api.Question;
 import at.ac.tuwien.big.we14.lab2.api.QuizFactory;
 
@@ -25,6 +26,11 @@ public abstract class SimpleQuizFactory extends QuizFactory {
 	@Override
 	public Question createQuestion() {
 		return new SimpleQuestion();
+	}
+	
+	@Override
+	public Player createPlayer() {
+		return new SimplePlayer();
 	}
 
 	@Override
