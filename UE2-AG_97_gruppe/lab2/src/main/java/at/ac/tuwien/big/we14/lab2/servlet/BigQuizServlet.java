@@ -28,6 +28,8 @@ public class BigQuizServlet extends HttpServlet {
 	private QuizFactory quizfactory;
 	private QuestionDataProvider questiondataprovider;
 	private List<Category> categories;
+	private int roundCounter;
+	private int questionCounter;
 	private Player player1;
 	private Player player2;
 	
@@ -36,6 +38,8 @@ public class BigQuizServlet extends HttpServlet {
 		quizfactory = new ServletQuizFactory(this.getServletContext());
 		questiondataprovider = quizfactory.createQuestionDataProvider();
 		categories = questiondataprovider.loadCategoryData();
+		questionCounter=0;
+		roundCounter=0;
 
 	}
 	
@@ -53,7 +57,19 @@ public class BigQuizServlet extends HttpServlet {
 			//question an das session atrribut geben
 			session.setAttribute("question",question);
 			//und weitere Verarbeitung an das jsp
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
+			RequestDispatcher dispatcher;
+			if(questionCounter<2){
+				dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
+				questionCounter++;
+			}else{
+				if(roundCounter<4){
+					dispatcher = getServletContext().getRequestDispatcher("/roundcomplete.jsp");
+					questionCounter=0;
+					roundCounter++;
+				} else {
+					dispatcher = getServletContext().getRequestDispatcher("/finish.jsp");
+				}
+			}
 			dispatcher.forward(request, response);
 		//}
 	}

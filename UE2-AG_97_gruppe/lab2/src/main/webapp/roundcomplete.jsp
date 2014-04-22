@@ -47,7 +47,7 @@
                     </ul>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
                 </div>
-                <a id="next" href="question.html">Weiter</a>
+                <a id="next" href="question.jsp">Weiter</a>
             </section>
         </section>
 
