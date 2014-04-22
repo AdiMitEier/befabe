@@ -39,8 +39,6 @@ public class BigQuizServlet extends HttpServlet {
 		quizfactory = new ServletQuizFactory(this.getServletContext());
 		questiondataprovider = quizfactory.createQuestionDataProvider();
 		categories = questiondataprovider.loadCategoryData();
-		//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
-		currentCategory = categories.get((int)(Math.random()*categories.size()));
 		questionCounter=0;
 		roundCounter=0;
 
@@ -53,11 +51,15 @@ public class BigQuizServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{	
 		HttpSession session = request.getSession(true);
 		RequestDispatcher dispatcher;
+		if(questionCounter==0){
+			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
+			currentCategory = categories.get((int)(Math.random()*categories.size()));
+		}
 		if(questionCounter<2){
 			//solange man weniger als 3 Fragen beantwortet hat wird immer eine Frage aus derselben Kategorie gestellt
 			//abhaengig von der Kategorie ein der Fragen zufaellig auswaehlen
 			Question question = currentCategory.getQuestions().get((int)Math.random()*currentCategory.getQuestions().size());
-			//question an das session atrribut geben
+			//question und currentCategory an das session atrribut geben
 			session.setAttribute("question",question);
 			session.setAttribute("category",currentCategory);
 			//und weitere Verarbeitung an das jsp
@@ -65,9 +67,8 @@ public class BigQuizServlet extends HttpServlet {
 			questionCounter++;
 		}else{
 			//nach der dritten Frage wird die Runde beendet, dh die kategorie gewechselt und der Rundencounter um 1 erhoeht
-			if(roundCounter<4){
+			if(roundCounter<5){
 				dispatcher = getServletContext().getRequestDispatcher("/roundcomplete.jsp");
-				currentCategory = categories.get((int)(Math.random()*categories.size()));
 				questionCounter=0;
 				roundCounter++;
 			} else {
