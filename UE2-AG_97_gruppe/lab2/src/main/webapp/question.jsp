@@ -11,6 +11,15 @@
         <link rel="stylesheet" type="text/css" href="style/screen.css" />
         <script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/framework.js" type="text/javascript"></script>
+        <script type="text/javascript">
+    	if(typeof(Storage)!="undefined"){
+    		document.getElementById("lastgame").innerHTML=localStorage.getItem("lastfinishedGame");
+		} else {
+			document.getElementById("lastgame").innerHTML="storage not supported in this browser";
+		}
+                
+
+        </script>
     </head>
     <body id="questionpage">
         <a class="accessibility" href="#question">Zur Frage springen</a>
