@@ -20,8 +20,8 @@
         </nav>
         
         <section role="main" id="quiz">
-       	<form id="questionform" action="BigQuizServlet" method="post">
-       		<input type="submit" id="startgame" value="Quiz starten"/>
+       	<form id="startform" action="BigQuizServlet" method="post">
+       		<input type="submit" id="startgame" name="startQuiz" value="Quiz starten"/>
        	</form>
        
         <!-- 

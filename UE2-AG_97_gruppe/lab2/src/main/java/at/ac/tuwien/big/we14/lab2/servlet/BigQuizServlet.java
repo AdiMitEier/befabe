@@ -32,6 +32,7 @@ public class BigQuizServlet extends HttpServlet {
 	private int roundCounter;
 	private int questionCounter;
 	private Category currentCategory;
+	private int i;
 	private Player player1;
 	private Player player2;
 	
@@ -40,8 +41,10 @@ public class BigQuizServlet extends HttpServlet {
 		quizfactory = new ServletQuizFactory(this.getServletContext());
 		questiondataprovider = quizfactory.createQuestionDataProvider();
 		categories = questiondataprovider.loadCategoryData();
-		questionCounter=-1;
+		currentCategory = categories.get(i);
+		questionCounter=0;
 		roundCounter=0;
+		i=0;
 		player1 = new SimplePlayer("Ich");
 		player2 = new SimplePlayer("Computer");
 		player1.setWonRounds(0);
@@ -49,17 +52,14 @@ public class BigQuizServlet extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
+		
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{	
 		HttpSession session = request.getSession(true);
 		RequestDispatcher dispatcher;
-		if(questionCounter==0 || questionCounter==-1){
-			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
-			currentCategory = categories.get((int)(Math.random()*categories.size()));
-		}	
 		if(questionCounter<2){
+			System.out.println("Frage in Kategorie:" +currentCategory.getName());
 			//solange man weniger als 3 Fragen beantwortet hat wird immer eine Frage aus derselben Kategorie gestellt
 			//abhaengig von der Kategorie ein der Fragen zufaellig auswaehlen
 			int numberOfquestions = currentCategory.getQuestions().size();
@@ -71,7 +71,9 @@ public class BigQuizServlet extends HttpServlet {
 			session.setAttribute("player2", player2);
 			//und weitere Verarbeitung an das jsp
 			dispatcher = getServletContext().getRequestDispatcher("/question.jsp");
-			questionCounter++;
+			if(request.getParameter("startQuiz")==null)
+				questionCounter++;
+			System.out.println(questionCounter);
 		}else{
 			//nach der dritten Frage wird die Runde beendet, dh die kategorie gewechselt und der Rundencounter um 1 erhoeht
 			if(roundCounter<4){
@@ -91,11 +93,15 @@ public class BigQuizServlet extends HttpServlet {
 				dispatcher = getServletContext().getRequestDispatcher("/roundcomplete.jsp");
 				player1.resetRightQuestions();
 				player2.resetRightQuestions();
+				i++;
+				currentCategory = categories.get(i);
+				System.out.println("Naechste Runde hat Kategorie:" +currentCategory.getName());
 				questionCounter=0;
 				roundCounter++;
 			} else {
 				//nach der 5ten Runde hat man das Spiel beendet und kann im finish.jsp ein neues Spiel waehlen
 				dispatcher = getServletContext().getRequestDispatcher("/finish.jsp");
+				i=0;
 				roundCounter=0;
 				questionCounter=0;
 				player1.setWonRounds(0);
@@ -105,6 +111,7 @@ public class BigQuizServlet extends HttpServlet {
 			}
 		}
 		dispatcher.forward(request, response);
+		
 	}
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response){

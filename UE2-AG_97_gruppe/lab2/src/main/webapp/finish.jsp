@@ -41,7 +41,10 @@
                     <span id="player2name" class="playername"><%=player2.getName() %></span>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%=player2.getWonRounds() %></span></p>
                 </div>
-                <a id="next" href="question.jsp" accesskey="n">Neues Spiel</a>
+                <form id="startform" action="BigQuizServlet" method="post">
+       				<input type="submit" id="next" name="startQuiz" value="Neues Spiel"/>
+       			</form>
+                <!--<a id="next" href="question.jsp" accesskey="n">Neues Spiel</a>   -->
             </section>
         </section>
 
