@@ -11,12 +11,20 @@
         <script src="js/framework.js" type="text/javascript"></script>
         <script type="text/javascript">
 
-			if(typeof(Storage)!="undefined"){
-				var date = new Date;
+        	if(supportsLocalStorage()) {
+        		var date = new Date;
 				date.setTime(date.getTime());
-				var dateToStore = date.getDate() + " " + date.getMonth() + " " + date.getFullYear() + " " + date.getHours() + ":"+date.getMinutes();
-				localStorage.setItem("lastfinishedGame", dateToStore);	
-			}	
+				var dateToStore = "Letztes Spiel: " + date.toLocaleDateString(date) + " - " + date.toLocaleTimeString(date);
+				localStorage.lastFinishedGame = dateToStore;
+        	}
+        	
+        
+// 			if(typeof(Storage)!="undefined"){
+// 				var date = new Date;
+// 				date.setTime(date.getTime());
+// 				var dateToStore = date.getDate() + " " + date.getMonth() + " " + date.getFullYear() + " " + date.getHours() + ":"+date.getMinutes();
+// 				localStorage.setItem("lastfinishedGame", dateToStore);	
+// 			}	
 
         </script>
     </head>
