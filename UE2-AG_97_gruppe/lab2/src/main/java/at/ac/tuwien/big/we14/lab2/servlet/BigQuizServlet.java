@@ -40,7 +40,7 @@ public class BigQuizServlet extends HttpServlet {
 		quizfactory = new ServletQuizFactory(this.getServletContext());
 		questiondataprovider = quizfactory.createQuestionDataProvider();
 		categories = questiondataprovider.loadCategoryData();
-		questionCounter=0;
+		questionCounter=-1;
 		roundCounter=0;
 		player1 = new SimplePlayer("Ich");
 		player2 = new SimplePlayer("Computer");
@@ -55,7 +55,7 @@ public class BigQuizServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{	
 		HttpSession session = request.getSession(true);
 		RequestDispatcher dispatcher;
-		if(questionCounter==0){
+		if(questionCounter==0 || questionCounter==-1){
 			//abhaengig von der Anzahl der geladenen Kategorien eine zufaellig auswaehlen
 			currentCategory = categories.get((int)(Math.random()*categories.size()));
 		}	
