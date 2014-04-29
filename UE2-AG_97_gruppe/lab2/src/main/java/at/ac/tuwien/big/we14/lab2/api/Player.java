@@ -9,4 +9,5 @@ public interface Player {
 	public int getRightQuestions();
 	public void incrementRightQuestions();
 	public void resetRightQuestions();
+	public void decrementRightQuestions();
 }

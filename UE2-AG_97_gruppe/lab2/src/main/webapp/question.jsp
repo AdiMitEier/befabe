@@ -102,7 +102,7 @@
                 <meter id="timermeter" min="0" low="20" value="100" max="100"/>
             </section>
             
-            <section id="lastgame">
+            <section id="lastgame" onLoad="lastGameFinished()">
                 <p>Letztes Spiel: Nie</p>
             </section>
         </section>

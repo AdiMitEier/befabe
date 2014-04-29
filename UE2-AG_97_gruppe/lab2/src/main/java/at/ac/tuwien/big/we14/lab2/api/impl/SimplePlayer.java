@@ -52,7 +52,14 @@ public class SimplePlayer implements Player {
 		rightQuestions++;
 		
 	}
-
+	@Override
+	public void decrementRightQuestions() {
+		rightQuestions--;
+		if(rightQuestions <0)
+			rightQuestions ++;
+		
+	}
+	
 	@Override
 	public void resetRightQuestions() {
 		rightQuestions=0;	
