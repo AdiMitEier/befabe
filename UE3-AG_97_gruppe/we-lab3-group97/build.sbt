@@ -4,8 +4,9 @@ version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   javaJdbc,
-  javaEbean,
-  cache
+  javaCore,
+  javaJpa,
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.1.Final"
 )     
 
 play.Project.playJavaSettings
