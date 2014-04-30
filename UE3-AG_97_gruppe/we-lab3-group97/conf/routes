@@ -10,3 +10,6 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Quiz
 GET		/quiz						controllers.Quiz.authentication()
+GET		/registration				controllers.Quiz.registration()
+
+POST	/registration				controllers.Quiz.register()
