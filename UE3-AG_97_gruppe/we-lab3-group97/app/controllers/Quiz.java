@@ -25,10 +25,9 @@ public class Quiz extends Controller {
     
     @Transactional
     public static Result register() {
-    	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
-    	
+    	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();    	
     	JPA.em().persist(user);	
-    	return ok(Json.toJson(user));
+    	return ok(authentication.render());
     	
     }
 
