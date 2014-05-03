@@ -84,6 +84,7 @@ public class Quiz extends Controller {
     	Question question = game.getCurrentRound().getQuestions().get(questionid);
     	
     	List<Choice> choices = question.getAllChoices();
+    	question.getAllChoices().get(1).getQuestion();
     	questionCounter++;
     	return ok(quiz.render(choices));
     }
