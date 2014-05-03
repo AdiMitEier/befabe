@@ -4,6 +4,7 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.persistence.EntityManager;
 
@@ -27,6 +28,8 @@ import views.html.*;
 public class Quiz extends Controller {
 	
 	private static QuizGame game;
+	private static int questionCounter;
+	
     
     public static Result registration() {
     	return ok(registration.render());
@@ -73,10 +76,21 @@ public class Quiz extends Controller {
         	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
     		game=factory.createQuizGame();
     		game.startNewRound();
+    		questionCounter=0;
     	}
+    	if(questionCounter>2){
+    		game.startNewRound();
+    		questionCounter=0;
+    	}
+    	List<Question> questions = game.getCurrentRound().getQuestions();
+    	Random randomGenerator = new Random();  	
+    	int questionid = randomGenerator.nextInt(questions.size());
     	
-    	Question question = game.getCurrentRound().getCurrentQuestion(user);	   	
+    	Question question = game.getCurrentRound().getQuestions().get(questionid);
+    	
     	List<Choice> choices = question.getAllChoices();
+    	question.getAllChoices().get(1).getQuestion();
+    	questionCounter++;
     	return ok(quiz.render(choices));
     }
 
