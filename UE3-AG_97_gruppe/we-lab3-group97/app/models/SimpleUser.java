@@ -1,14 +1,15 @@
 package models;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import play.db.jpa.JPA;
 import at.ac.tuwien.big.we14.lab2.api.User;
 
 @Entity
+@Table(name="Users")
 public class SimpleUser implements User {
 
 	public static enum Gender {
@@ -19,7 +20,7 @@ public class SimpleUser implements User {
 	private long id;
 	private String firstname;
 	private String lastname;
-	private Date birthdate;
+	//private Date birthdate;
 	private Gender gender;
 	private String username;
 	private String password;	// TODO: hash
@@ -57,13 +58,13 @@ public class SimpleUser implements User {
 		this.lastname = lastname;
 	}
 
-	public Date getBirthdate() {
-		return birthdate;
-	}
-
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
-	}
+//	public Date getBirthdate() {
+//		return birthdate;
+//	}
+//
+//	public void setBirthdate(Date birthdate) {
+//		this.birthdate = birthdate;
+//	}
 
 	public Gender getGender() {
 		return gender;
