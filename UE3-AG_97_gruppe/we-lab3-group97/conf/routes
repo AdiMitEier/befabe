@@ -16,9 +16,9 @@ POST    /login                      controllers.Authentication.authenticate()
 # Quiz
 
 
-GET		/registration				controllers.Quiz.registration()
+GET		/registration				controllers.Registration.registration()
 
-POST	/registration				controllers.Quiz.register()
+POST	/registration				controllers.Registration.register()
 
 GET		/login						controllers.Quiz.login()
 
