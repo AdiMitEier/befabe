@@ -24,7 +24,7 @@ public class SimpleUser implements User{
 	private long id;
 	private String firstname;
 	private String lastname;
-	//private Date birthdate;
+	private Date birthdate;
 	private Gender gender;
 	private String username;
 	private String password;	// TODO: hash
@@ -62,13 +62,13 @@ public class SimpleUser implements User{
 		this.lastname = lastname;
 	}
 
-//	public Date getBirthdate() {
-//		return birthdate;
-//	}
-//
-//	public void setBirthdate(Date birthdate) {
-//		this.birthdate = birthdate;
-//	}
+	public Date getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(Date birthdate) {
+		this.birthdate = birthdate;
+	}
 
 	public Gender getGender() {
 		return gender;
