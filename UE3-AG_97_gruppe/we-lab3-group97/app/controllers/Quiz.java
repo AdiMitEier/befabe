@@ -81,8 +81,15 @@ public class Quiz extends Controller {
     	}
     	if(questionCounter>2){
     		game.startNewRound();
+    		if(game.getCurrentRoundCount()==6){
+        		//game.
+        		game=null;//TODO achtung hier erst Daten rausziehen und dann an quizover.render() als Argument uebergeben
+        		return ok(quizover.render());
+        	}
     		questionCounter=0;
+    		return ok(roundover.render());
     	}
+    	
     	List<Question> questions = game.getCurrentRound().getQuestions();
     	Random randomGenerator = new Random();  	
     	int questionid = randomGenerator.nextInt(questions.size());
