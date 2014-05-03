@@ -31,5 +31,16 @@ public class Quiz extends Controller {
     	return ok(authentication.render());
     	
     }
+    
+    public static Result login() {
+    	// do login
+    	boolean authenticated = true;
+    	if(authenticated) {
+    		return ok(index.render());
+    	} else {
+    		return ok(authentication.render());	// badRequest?
+    	}
+    	
+    }
 
 }
