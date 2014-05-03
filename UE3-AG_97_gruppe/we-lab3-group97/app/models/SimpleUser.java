@@ -97,7 +97,7 @@ public class SimpleUser implements User{
 		this.password = password;
 	}
 
-	public static SimpleUser authenticate(String userName, String password2) {
+	public static SimpleUser authenticate(String userName, String password) {
 		//return user if username and password is matching, null otherwise 
 		return new SimpleUser();
 	}

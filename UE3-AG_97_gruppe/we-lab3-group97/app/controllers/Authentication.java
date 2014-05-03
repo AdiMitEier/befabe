@@ -10,11 +10,11 @@ public class Authentication extends Controller{
 	
 public static class Login {
         
-        public String email;
+        public String userName;
         public String password;
         
         public String validate() {
-            if(SimpleUser.authenticate(email, password) == null) {
+            if(SimpleUser.authenticate(userName, password) == null) {
                 return "Invalid user or password";
             }
             return null;
@@ -39,7 +39,7 @@ public static class Login {
         if(loginForm.hasErrors()) {
             return badRequest(login.render(loginForm));
         } else {
-            session("email", loginForm.get().email);
+            session("userName", loginForm.get().userName);
             return redirect(
                 routes.Quiz.index()
             );
