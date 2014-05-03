@@ -4,7 +4,7 @@ package controllers;
 
 import javax.persistence.EntityManager;
 
-import at.ac.tuwien.big.we14.lab2.api.impl.SimpleUser;
+import models.SimpleUser;
 import play.*;
 import play.data.Form;
 import play.db.jpa.JPA;
@@ -26,6 +26,7 @@ public class Quiz extends Controller {
     @Transactional
     public static Result register() {
     	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
+    	
     	JPA.em().persist(user);	
     	return ok(Json.toJson(user));
     	

@@ -3,20 +3,24 @@ package models;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import at.ac.tuwien.big.we14.lab2.api.User;
 
+
 @Entity
 @Table(name="Users")
-public class SimpleUser implements User {
+public class SimpleUser implements User{
 
 	public static enum Gender {
 		MALE, FEMALE
 	};
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String firstname;
 	private String lastname;
