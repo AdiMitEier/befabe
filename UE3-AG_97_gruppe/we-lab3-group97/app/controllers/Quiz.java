@@ -4,6 +4,7 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.persistence.EntityManager;
 
@@ -70,8 +71,12 @@ public class Quiz extends Controller {
     		game=factory.createQuizGame();
     		game.startNewRound();
     	}
+    	List<Question> questions = game.getCurrentRound().getQuestions();
+    	Random randomGenerator = new Random();  	
+    	int questionid = randomGenerator.nextInt(questions.size());
     	
-    	Question question = game.getCurrentRound().getCurrentQuestion(user);	   	
+    	Question question = game.getCurrentRound().getQuestions().get(questionid);
+    	
     	List<Choice> choices = question.getAllChoices();
     	return ok(quiz.render(choices));
     }
