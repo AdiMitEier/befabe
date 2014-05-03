@@ -17,4 +17,4 @@ POST	/registration				controllers.Quiz.register()
 
 GET		/login						controllers.Quiz.login()
 
-GET		/question					controllers.Quiz.question()
+POST	/quiz						controllers.Quiz.quiz()
