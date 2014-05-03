@@ -25,14 +25,12 @@ import play.libs.Json;
 import play.mvc.*;
 import views.html.*;
 
+@Security.Authenticated(Secured.class)
 public class Quiz extends Controller {
 	
 	private static QuizGame game;
 	private static int questionCounter;
 	
-    public static Result authentication() {
-        return ok(authentication.render());
-    }
     
     public static Result registration() {
     	return ok(registration.render());
@@ -43,8 +41,14 @@ public class Quiz extends Controller {
     	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
     	
     	JPA.em().persist(user);	
-    	return ok(authentication.render());
+    	return redirect(
+                routes.Authentication.login()
+            );
     	
+    }
+    
+    public static Result index() {
+    	return ok(index.render());
     }
     
     public static Result login() {
@@ -59,7 +63,9 @@ public class Quiz extends Controller {
     	if(authenticated) {
     		return ok(index.render());
     	} else {
-    		return ok(authentication.render());	// badRequest?
+    		return redirect(
+                    routes.Authentication.login()
+                );	// badRequest?
     	}	
     }
 
