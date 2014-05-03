@@ -28,6 +28,7 @@ import views.html.*;
 public class Quiz extends Controller {
 	
 	private static QuizGame game;
+	private static int questionCounter;
 	
     public static Result authentication() {
         return ok(authentication.render());
@@ -70,6 +71,11 @@ public class Quiz extends Controller {
         	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
     		game=factory.createQuizGame();
     		game.startNewRound();
+    		questionCounter=0;
+    	}
+    	if(questionCounter>2){
+    		game.startNewRound();
+    		questionCounter=0;
     	}
     	List<Question> questions = game.getCurrentRound().getQuestions();
     	Random randomGenerator = new Random();  	
@@ -78,6 +84,7 @@ public class Quiz extends Controller {
     	Question question = game.getCurrentRound().getQuestions().get(questionid);
     	
     	List<Choice> choices = question.getAllChoices();
+    	questionCounter++;
     	return ok(quiz.render(choices));
     }
 
