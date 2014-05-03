@@ -3,11 +3,14 @@ package models;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Query;
 import javax.persistence.Table;
 
+import play.db.jpa.JPA;
 import at.ac.tuwien.big.we14.lab2.api.User;
 
 
@@ -93,6 +96,12 @@ public class SimpleUser implements User{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public static SimpleUser authenticate(String userName, String password2) {
+		//return user if username and password is matching, null otherwise 
+		return new SimpleUser();
+	}
+
 	
 	
 }
