@@ -43,4 +43,8 @@ public class Quiz extends Controller {
     	
     }
 
+    public static Result question() {
+    	return ok(quiz.render());
+    }
+    
 }
