@@ -28,7 +28,7 @@ public class Quiz extends Controller {
     	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
     	
     	JPA.em().persist(user);	
-    	return ok(Json.toJson(user));
+    	return ok(authentication.render());
     	
     }
 
