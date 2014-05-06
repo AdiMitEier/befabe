@@ -21,6 +21,7 @@ import at.ac.tuwien.big.we14.lab2.api.QuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.QuizGame;
 import at.ac.tuwien.big.we14.lab2.api.User;
 import at.ac.tuwien.big.we14.lab2.api.impl.PlayQuizFactory;
+import models.SelectedOptions;
 import models.SimpleUser;
 import play.*;
 import play.api.mvc.Session;
@@ -61,31 +62,20 @@ public class Quiz extends Controller {
     	}	
     }
     
-    public static class SelectedOptions {
-    	public List<String> option = new ArrayList<String>();
-    	public String questiontext;
-    }
-    
-    
     public static Result quiz() {
     	User user=new at.ac.tuwien.big.we14.lab2.api.impl.SimpleUser();
 		user.setName(Quiz.session().get("user"));
-		/*
-		if(game!=null){
-			Form<SelectedOptions> optionForm = Form.form(SelectedOptions.class).bindFromRequest();
-			SelectedOptions selectedOptions = optionForm.get();
+		
+		//evaluate Answers from previous asked question
+		if(game!=null && questionCounter!=0){
+			SelectedOptions selectedOptions = Form.form(SelectedOptions.class).bindFromRequest().get();
 			Map<String, String[]> map = request().body().asFormUrlEncoded();
-			String[] checkedVal=map.get("option");
-			selectedOptions.option=Arrays.asList(checkedVal);
-			for(String s:selectedOptions.option){
+			String[] checkedVal=map.get("choice");
+			selectedOptions.choice=Arrays.asList(checkedVal);
+			for(String s:selectedOptions.choice){
 				Logger.info(s);
-			}*/
-			/*selectedOptions.option.removeAll(Collections.singleton(null));
-			Logger.info("huhu");
-			Logger.info(selectedOptions.questiontext);
-			for(String c:selectedOptions.option){
-				Logger.info(c);
-			}*/
+			}
+		}
 
 		if(game==null){
         	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
@@ -96,6 +86,7 @@ public class Quiz extends Controller {
     	if(questionCounter>2){ 		
     		if(game.getCurrentRoundCount()==5){
         		//game.
+    			questionCounter=0;
         		game=null;//TODO achtung hier erst Daten rausziehen und dann an quizover.render() als Argument uebergeben
         		return ok(quizover.render());
         	}
