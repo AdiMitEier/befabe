@@ -50,6 +50,11 @@
                     <label for="password">Passwort*:</label>
                     <input id="password" type="password" required="required" name="password"/>
                     <div id="error_msg_password" class="hide" role="alert">Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
+                    @if(form.hasGlobalErrors) {
+					    <p class="error">
+					        @form.globalError.message
+					    </p>
+					}
                     <input id="registersubmit" type="submit" value="Registrieren" accesskey="s"/>
                     <p id="requiredhint">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
                 </fieldset>

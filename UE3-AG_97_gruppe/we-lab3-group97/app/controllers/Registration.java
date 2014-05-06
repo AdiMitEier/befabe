@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaQuery;
 
 import models.SimpleUser;
 import play.data.Form;
+import play.data.validation.ValidationError;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
@@ -35,7 +36,8 @@ public class Registration extends Controller{
     	query.setMaxResults(1);
     	if(query.getResultList().size() > 0) {
     		// user exists already --> bad request
-    		return ok("user exists already");
+    		registrationForm.reject("username already exists");
+    		return badRequest(views.html.registration.render(registrationForm));
     	}
     	
     	entityManager.persist(user);	
