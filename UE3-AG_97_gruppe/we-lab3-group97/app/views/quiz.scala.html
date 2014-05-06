@@ -53,7 +53,7 @@
                     <p id="questiontext">@choices.get(0).getQuestion().getText()</p>
                     <ul id="answers">					
                     @for((choice,index) <- choices.zipWithIndex) {
-                    	<li><input id="option@index" name="choice" value="@choice.getText" type="checkbox"/><label for="option@index">@choice.getText</label></li>
+                    	<li><input id="option@index" name="choice" value="@choice.getId" type="checkbox"/><label for="option@index">@choice.getText</label></li>
                     }
                     </ul>
                     <input id="timeleftvalue" type="hidden" value="100"/>

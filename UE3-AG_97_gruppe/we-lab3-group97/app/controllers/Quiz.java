@@ -38,6 +38,8 @@ public class Quiz extends Controller {
 	
 	private static QuizGame game;
 	private static int questionCounter;
+	private static int questionId;
+	//private 
 	
     
     public static Result index() {
@@ -62,19 +64,83 @@ public class Quiz extends Controller {
     	}	
     }
     
+    /*
+    public static Result quiz(){
+    	User user = new at.ac.tuwien.big.we14.lab2.api.impl.SimpleUser();
+    	user.setName(Quiz.session().get("user"));
+    	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
+    	   	
+		if(game==null){	  
+			game=factory.createQuizGame();
+			game.startNewRound();
+		}
+		
+		if(game!=null){
+			if(game.isRoundOver()){
+				Logger.info("Render Roundover");
+				game.startNewRound();
+				return ok(roundover.render());
+			} else {
+				List<Integer> selectedChoiceIds = new ArrayList<Integer>();
+				List<Choice> selectedChoices = new ArrayList<Choice>();
+				
+				SelectedOptions selectedOptions = Form.form(SelectedOptions.class).bindFromRequest().get();
+				Map<String,String[]> map = request().body().asFormUrlEncoded();
+				String[] checkedVal=map.get("choice");
+				
+				if(checkedVal!=null){
+					selectedOptions.choice=Arrays.asList(checkedVal);			
+					for(String c: selectedOptions.choice){
+						selectedChoiceIds.add(Integer.parseInt(c));
+					}
+					for(Choice q: game.getCurrentRound().getCurrentQuestion(user).getAllChoices()){
+						if(selectedChoiceIds.contains(q.getId()))
+							selectedChoices.add(q);
+					}						
+				}
+				game.getCurrentRound().answerCurrentQuestion(selectedChoices, 10, user, factory);
+			}
+		}
+		if(game.getCurrentRound().getCurrentQuestion(user)==null){
+			Logger.info("game round question is null"); //WTF?
+		}
+		List<Choice> choices = game.getCurrentRound().getCurrentQuestion(user).getAllChoices();			
+		return ok(quiz.render(choices));
+    }*/
+    
+    
+    
     public static Result quiz() {
     	User user=new at.ac.tuwien.big.we14.lab2.api.impl.SimpleUser();
 		user.setName(Quiz.session().get("user"));
+		List<Choice> selectedChoices = new ArrayList<Choice>();
+		List<Integer> selectedChoicesId = new ArrayList<Integer>();
+		boolean prevCorrect=true;
+		boolean compCorrect=true;
+		
 		
 		//evaluate Answers from previous asked question
 		if(game!=null && questionCounter!=0){
 			SelectedOptions selectedOptions = Form.form(SelectedOptions.class).bindFromRequest().get();
 			Map<String, String[]> map = request().body().asFormUrlEncoded();
 			String[] checkedVal=map.get("choice");
+			if(checkedVal!=null){
 			selectedOptions.choice=Arrays.asList(checkedVal);
 			for(String s:selectedOptions.choice){
-				Logger.info(s);
+				selectedChoicesId.add(Integer.parseInt(s));
 			}
+			for(Choice c:game.getCurrentRound().getQuestion(questionId).getAllChoices()){
+				if(selectedChoicesId.contains(c.getId())){
+					selectedChoices.add(c);
+				}
+			}
+			}
+			for(Choice c:game.getCurrentRound().getQuestion(questionId).getCorrectChoices()){
+				if(!selectedChoices.contains(c))
+					prevCorrect=false;
+			}
+			Logger.info(String.valueOf(prevCorrect));
+			
 		}
 
 		if(game==null){
@@ -97,9 +163,9 @@ public class Quiz extends Controller {
     	
     	List<Question> questions = game.getCurrentRound().getQuestions();
     	Random randomGenerator = new Random();  	
-    	int questionid = randomGenerator.nextInt(questions.size());
-    	Quiz.session().put("questionid", String.valueOf(questionid));
-    	Question question = game.getCurrentRound().getQuestions().get(questionid);
+    	questionId = randomGenerator.nextInt(questions.size());
+    	Quiz.session().put("questionid", String.valueOf(questionId));
+    	Question question = game.getCurrentRound().getQuestions().get(questionId);
     	
     	List<Choice> choices = question.getAllChoices();
     	question.getAllChoices().get(1).getQuestion();
