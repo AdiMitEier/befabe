@@ -39,7 +39,8 @@ public class Quiz extends Controller {
 	private static QuizGame game;
 	private static int questionCounter;
 	private static int questionId;
-	//private 
+	private static List<String> correctQuestionsPlayer; 
+	private static List<String> correctQuestionsComp;
 	
     
     public static Result index() {
@@ -125,20 +126,32 @@ public class Quiz extends Controller {
 			Map<String, String[]> map = request().body().asFormUrlEncoded();
 			String[] checkedVal=map.get("choice");
 			if(checkedVal!=null){
-			selectedOptions.choice=Arrays.asList(checkedVal);
-			for(String s:selectedOptions.choice){
-				selectedChoicesId.add(Integer.parseInt(s));
-			}
-			for(Choice c:game.getCurrentRound().getQuestion(questionId).getAllChoices()){
-				if(selectedChoicesId.contains(c.getId())){
-					selectedChoices.add(c);
+				selectedOptions.choice=Arrays.asList(checkedVal);
+				for(String s:selectedOptions.choice){
+					selectedChoicesId.add(Integer.parseInt(s));
 				}
-			}
+				for(Choice c:game.getCurrentRound().getQuestion(questionId).getAllChoices()){
+					if(selectedChoicesId.contains(c.getId())){
+						selectedChoices.add(c);
+					}
+				}
 			}
 			for(Choice c:game.getCurrentRound().getQuestion(questionId).getCorrectChoices()){
 				if(!selectedChoices.contains(c))
 					prevCorrect=false;
 			}
+			if(prevCorrect){
+				correctQuestionsPlayer.set(questionCounter-1, "correct");
+			} else {
+				correctQuestionsPlayer.set(questionCounter-1, "incorrect");
+			}
+			double compCorrectCheck = Math.random();
+			if(compCorrectCheck>0.6){
+				correctQuestionsComp.set(questionCounter-1, "incorrect");
+			} else {
+				correctQuestionsComp.set(questionCounter-1, "correct");
+			}
+			
 			Logger.info(String.valueOf(prevCorrect));
 			
 		}
@@ -146,19 +159,32 @@ public class Quiz extends Controller {
 		if(game==null){
         	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
     		game=factory.createQuizGame();
+    		correctQuestionsPlayer=new ArrayList<String>();
+    		correctQuestionsComp=new ArrayList<String>();
+    		setUnknown(correctQuestionsComp);
+    		setUnknown(correctQuestionsPlayer);
     		game.startNewRound();
     		questionCounter=0;
     	}
     	if(questionCounter>2){ 		
     		if(game.getCurrentRoundCount()==5){
-        		//game.
+        		correctQuestionsPlayer=new ArrayList<String>();
+        		correctQuestionsComp=new ArrayList<String>();
+        		setUnknown(correctQuestionsComp);
+        		setUnknown(correctQuestionsPlayer);
     			questionCounter=0;
         		game=null;//TODO achtung hier erst Daten rausziehen und dann an quizover.render() als Argument uebergeben
         		return ok(quizover.render());
         	}
+    		List<String> resultForRoundOver=correctQuestionsPlayer;
+    		List<String> resultForRoundOverComp=correctQuestionsComp;
+    		correctQuestionsPlayer=new ArrayList<String>();
+    		correctQuestionsComp=new ArrayList<String>();
+    		setUnknown(correctQuestionsComp);
+    		setUnknown(correctQuestionsPlayer);
     		game.startNewRound();
     		questionCounter=0;
-    		return ok(roundover.render());
+    		return ok(roundover.render(resultForRoundOver,resultForRoundOverComp));
     	}
     	
     	List<Question> questions = game.getCurrentRound().getQuestions();
@@ -171,9 +197,14 @@ public class Quiz extends Controller {
     	question.getAllChoices().get(1).getQuestion();
     	//game.getCurrentRound().getAnswer(1,user).
     	questionCounter++;
-    	return ok(quiz.render(choices));
+    	return ok(quiz.render(choices,correctQuestionsPlayer,correctQuestionsComp));
     }
     
+    private static void setUnknown(List<String> listToSet){
+    	listToSet.add("unknown");
+    	listToSet.add("unknown");
+    	listToSet.add("unknown");
+    }
     
 
     
