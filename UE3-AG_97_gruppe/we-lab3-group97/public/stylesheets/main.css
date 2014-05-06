@@ -154,6 +154,10 @@ input.error{
     border: 0.15ex solid #f00 !important;
 }
 
+.error{
+	color: #000;
+}
+
 
 #login label, #register label {
     display: block;

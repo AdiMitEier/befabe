@@ -24,15 +24,15 @@
                 @helper.form(routes.Authentication.authenticate) {
                     <fieldset>
                         <legend id="loginheading">Login</legend>
-                        @if(form.hasGlobalErrors) { 
-			                <p class="error">
-			                    @form.globalError.message
-			                </p>
-			            }
                         <label for="userName">Benutzername:</label>
                         <input id="username" name="username" type="text" required="required"/>
                         <label for="password">Passwort:</label>
                         <input id="password" name="password" type="password" required="required"/>
+                        @if(form.hasGlobalErrors) { 
+			                <p class="error">
+			                    @form.globalError.message <!--  TODO: I18n für error -->
+			                </p>
+			            }
                         <input id="loginsubmit" type="submit" value="Anmelden"/>
                     </fieldset>
                 }

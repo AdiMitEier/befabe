@@ -35,7 +35,6 @@ public class Registration extends Controller{
     	query.setParameter("username", user.getUsername());
     	query.setMaxResults(1);
     	if(query.getResultList().size() > 0) {
-    		// user exists already --> bad request
     		registrationForm.reject("username already exists");
     		return badRequest(views.html.registration.render(registrationForm));
     	}

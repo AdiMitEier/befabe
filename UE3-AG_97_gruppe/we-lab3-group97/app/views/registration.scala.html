@@ -45,14 +45,20 @@
                     <legend>Login Daten</legend>
                     <label for="username">Benutzername*:</label>
                     <input id="username" type="text" required="required" name="username"/>
+                    @for(error <- form("username").errors) {
+					    <p>@error.message</p> <!--  TODO: I18n für error -->
+					}
                     <div id="error_msg_username" class="hide" role="alert">Der Benutzername muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
                     
                     <label for="password">Passwort*:</label>
                     <input id="password" type="password" required="required" name="password"/>
+                    @for(error <- form("password").errors) {
+					    <p>@error.message</p> <!--  TODO: I18n für error -->
+					}
                     <div id="error_msg_password" class="hide" role="alert">Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
                     @if(form.hasGlobalErrors) {
 					    <p class="error">
-					        @form.globalError.message
+					        @form.globalError.message <!--  TODO: I18n für error -->
 					    </p>
 					}
                     <input id="registersubmit" type="submit" value="Registrieren" accesskey="s"/>
