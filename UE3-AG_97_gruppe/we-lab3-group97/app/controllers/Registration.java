@@ -1,5 +1,11 @@
 package controllers;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaQuery;
+
 import models.SimpleUser;
 import play.data.Form;
 import play.db.jpa.JPA;
@@ -11,14 +17,28 @@ import views.html.registration;
 public class Registration extends Controller{
 
     public static Result registration() {
-    	return ok(registration.render());
+    	Form<SimpleUser> registrationForm = new Form<SimpleUser>(SimpleUser.class);
+    	return ok(registration.render(registrationForm));
     }
     
     @Transactional
     public static Result register() {
+    	Form<SimpleUser> registrationForm = Form.form(SimpleUser.class).bindFromRequest();
+    	if(registrationForm.hasErrors()) {
+    		return badRequest(views.html.registration.render(registrationForm));
+    	}
     	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
+    	EntityManager entityManager = JPA.em();
     	
-    	JPA.em().persist(user);	
+    	Query query = entityManager.createQuery("SELECT u FROM SimpleUser u WHERE u.username = :username");
+    	query.setParameter("username", user.getUsername());
+    	query.setMaxResults(1);
+    	if(query.getResultList().size() > 0) {
+    		// user exists already --> bad request
+    		return ok("user exists already");
+    	}
+    	
+    	entityManager.persist(user);	
     	return redirect(
                 routes.Authentication.login()
             );

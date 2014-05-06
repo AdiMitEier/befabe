@@ -39,21 +39,6 @@ public class Quiz extends Controller {
 	private static int questionCounter;
 	
     
-    public static Result registration() {
-    	return ok(registration.render());
-    }
-    
-    @Transactional
-    public static Result register() {
-    	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
-    	
-    	JPA.em().persist(user);	
-    	return redirect(
-                routes.Authentication.login()
-            );
-    	
-    }
-    
     public static Result index() {
     	return ok(index.render());
     }

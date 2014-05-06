@@ -1,7 +1,9 @@
 package models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
@@ -9,14 +11,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Query;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+import play.data.validation.Constraints.MaxLength;
+import play.data.validation.Constraints.MinLength;
+import play.data.validation.Constraints.Required;
 import play.db.jpa.JPA;
+import play.db.jpa.Transactional;
 import at.ac.tuwien.big.we14.lab2.api.User;
 
-
 @Entity
-@Table(name="Users")
-public class SimpleUser implements User{
+public class SimpleUser implements User {
 
 	public static enum Gender {
 		MALE, FEMALE
@@ -29,9 +34,15 @@ public class SimpleUser implements User{
 	private String lastname;
 	private Date birthdate;
 	private Gender gender;
+	@MinLength(value = 4)
+	@MaxLength(value = 8)
+	@Required
+	@Column(unique = true)
 	private String username;
-	private String password;	// TODO: hash
-	
+	@MinLength(value = 4)
+	@MaxLength(value = 8)
+	@Required
+	private String password; // TODO: hash
 
 	public String getName() {
 		return username;
@@ -97,11 +108,23 @@ public class SimpleUser implements User{
 		this.password = password;
 	}
 
-	public static SimpleUser authenticate(String userName, String password) {
-		//return user if username and password is matching, null otherwise 
-		return new SimpleUser();
+
+	public static SimpleUser authenticateUser(String userName, String password) {
+		// return user if username and password is matching, null otherwise
+		Query query = JPA
+				.em()
+				.createQuery(
+						"SELECT u FROM SimpleUser u WHERE u.username = :username AND u.password = :password");
+		query.setParameter("username", userName);
+		query.setParameter("password", password);
+		query.setMaxResults(1);
+		List<SimpleUser> users = query.getResultList();
+		if (users.size() == 0) {
+			return null;
+		} else {
+			return users.get(0);
+		}
+
 	}
 
-	
-	
 }
