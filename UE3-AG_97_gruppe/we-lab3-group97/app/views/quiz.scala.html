@@ -48,7 +48,7 @@
 
       		
                 <!--<form id="questionform" action="@routes.Quiz.quiz" method="post">-->
-                 @helper.form(routes.Quiz.quiz){   
+                 @helper.form(routes.Quiz.quiz, 'id -> "questionform"){   
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext">@choices.get(0).getQuestion().getText()</p>
                     <ul id="answers">					
@@ -79,9 +79,9 @@
         
         <script type="text/javascript">
             //<![CDATA[
-            
             // initialize time
             $(document).ready(function(){
+            	
 		        var maxtime = 30;
 		        var hiddenInput = $("#timeleftvalue");
 		        var meter = $("#timer meter");
