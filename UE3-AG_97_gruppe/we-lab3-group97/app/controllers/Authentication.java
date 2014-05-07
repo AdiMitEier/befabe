@@ -34,6 +34,7 @@ public static class Login {
 	 * Login page.
 	 */
 	public static Result login() {
+		Quiz.game=null;
 		return ok(
 	        login.render(Form.form(Login.class))
 	    );
@@ -60,6 +61,7 @@ public static class Login {
      */
     public static Result logout() {
         session().clear();
+        Quiz.game=null;
         flash("success", "You've been logged out");
         return redirect(
             routes.Authentication.login()

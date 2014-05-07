@@ -20,6 +20,7 @@ GET		/registration				controllers.Registration.registration()
 
 POST	/registration				controllers.Registration.register()
 
-GET		/login						controllers.Quiz.login()
+#GET		/login						controllers.Quiz.login()
+GET		/quiz						controllers.Authentication.login()
 
 POST	/quiz						controllers.Quiz.quiz()

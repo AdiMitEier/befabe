@@ -36,19 +36,23 @@ import views.html.*;
 @Security.Authenticated(Secured.class)
 public class Quiz extends Controller {
 	
-	private static QuizGame game;
+	public static QuizGame game;
 	private static int questionCounter;
 	private static int questionId;
 	private static List<String> correctQuestionsPlayer; 
 	private static List<String> correctQuestionsComp;
+	private static int pWonRounds;
+	private static int cWonRounds;
 	
     
     public static Result index() {
+    	game=null;
     	return ok(index.render());
     }
-    
+    /*
     public static Result login() {
     	// do login
+    	
     	boolean authenticated = true;
     	
     	//TODO begin:User dynamisch aus Anmeldeinformation bekommen
@@ -63,7 +67,7 @@ public class Quiz extends Controller {
                     routes.Authentication.login()
                 );	// badRequest?
     	}	
-    }
+    }*/
     
     /*
     public static Result quiz(){
@@ -113,7 +117,7 @@ public class Quiz extends Controller {
     
     public static Result quiz() {
     	User user=new at.ac.tuwien.big.we14.lab2.api.impl.SimpleUser();
-		user.setName(Quiz.session().get("user"));
+		user.setName(Quiz.session().get("userName"));
 		List<Choice> selectedChoices = new ArrayList<Choice>();
 		List<Integer> selectedChoicesId = new ArrayList<Integer>();
 		boolean prevCorrect=true;
@@ -152,13 +156,14 @@ public class Quiz extends Controller {
 				correctQuestionsComp.set(questionCounter-1, "correct");
 			}
 			
-			Logger.info(String.valueOf(prevCorrect));
+			Logger.info(String.valueOf(prevCorrect)+selectedOptions.timeleftvalue);
 			
 		}
 
 		if(game==null){
         	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
     		game=factory.createQuizGame();
+    		game.getPlayers().get(1).setName("Computer");//hier wird Computer als Name für den zweiten Gegneer gesetzt
     		correctQuestionsPlayer=new ArrayList<String>();
     		correctQuestionsComp=new ArrayList<String>();
     		setUnknown(correctQuestionsComp);
@@ -182,9 +187,12 @@ public class Quiz extends Controller {
     		correctQuestionsComp=new ArrayList<String>();
     		setUnknown(correctQuestionsComp);
     		setUnknown(correctQuestionsPlayer);
+    		
+    		
+    		
     		game.startNewRound();
     		questionCounter=0;
-    		return ok(roundover.render(resultForRoundOver,resultForRoundOverComp));
+    		return ok(roundover.render(String.valueOf(game.getCurrentRoundCount()-1),resultForRoundOver,resultForRoundOverComp,game.getPlayers().get(0).getName(),game.getPlayers().get(1).getName()));
     	}
     	
     	List<Question> questions = game.getCurrentRound().getQuestions();
@@ -197,7 +205,7 @@ public class Quiz extends Controller {
     	question.getAllChoices().get(1).getQuestion();
     	//game.getCurrentRound().getAnswer(1,user).
     	questionCounter++;
-    	return ok(quiz.render(choices,correctQuestionsPlayer,correctQuestionsComp));
+    	return ok(quiz.render(choices,correctQuestionsPlayer,correctQuestionsComp,game.getPlayers().get(0).getName(),game.getPlayers().get(1).getName()));
     }
     
     private static void setUnknown(List<String> listToSet){
