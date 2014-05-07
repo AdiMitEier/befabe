@@ -40,6 +40,7 @@ public class Quiz extends Controller {
 	private static int questionCounter;
 	private static int questionId;
 	private static List<String> correctQuestionsPlayer; 
+	private static List<Integer> timesQuestionsPlayer = new ArrayList<Integer>();
 	private static List<String> correctQuestionsComp;
 	private static int pWonRounds;
 	private static int cWonRounds;
@@ -155,12 +156,12 @@ public class Quiz extends Controller {
 			} else {
 				correctQuestionsComp.set(questionCounter-1, "correct");
 			}
-			
-			Logger.info(String.valueOf(prevCorrect)+selectedOptions.timeleftvalue);
-			
+			timesQuestionsPlayer.add(Integer.parseInt(selectedOptions.timeleftvalue));
+			Logger.info(String.valueOf(prevCorrect)+" and answered with "+selectedOptions.timeleftvalue+" seconds left.");			
 		}
 
 		if(game==null){
+			//if game is new
         	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
     		game=factory.createQuizGame();
     		game.getPlayers().get(1).setName("Computer");//hier wird Computer als Name für den zweiten Gegneer gesetzt
@@ -168,31 +169,43 @@ public class Quiz extends Controller {
     		correctQuestionsComp=new ArrayList<String>();
     		setUnknown(correctQuestionsComp);
     		setUnknown(correctQuestionsPlayer);
+    		pWonRounds=0;
+    		cWonRounds=0;
     		game.startNewRound();
     		questionCounter=0;
     	}
-    	if(questionCounter>2){ 		
+    	if(questionCounter>2){ 
+    		//if round is over
     		if(game.getCurrentRoundCount()==5){
+    			//check if game is over
+    			String winner = checkWhoWon(correctQuestionsPlayer,correctQuestionsComp);
         		correctQuestionsPlayer=new ArrayList<String>();
         		correctQuestionsComp=new ArrayList<String>();
+        		timesQuestionsPlayer.clear();
         		setUnknown(correctQuestionsComp);
         		setUnknown(correctQuestionsPlayer);
     			questionCounter=0;
+    			int wonA=pWonRounds;
+    			int wonB=cWonRounds;
+    			pWonRounds=0;
+    			cWonRounds=0;
+    			String playerA = game.getPlayers().get(0).getName();
+    			String playerB = game.getPlayers().get(1).getName();
         		game=null;//TODO achtung hier erst Daten rausziehen und dann an quizover.render() als Argument uebergeben
-        		return ok(quizover.render());
+        		return ok(quizover.render(String.valueOf(wonA), String.valueOf(wonB),winner,playerA,playerB));
         	}
     		List<String> resultForRoundOver=correctQuestionsPlayer;
     		List<String> resultForRoundOverComp=correctQuestionsComp;
     		correctQuestionsPlayer=new ArrayList<String>();
     		correctQuestionsComp=new ArrayList<String>();
+    		timesQuestionsPlayer.clear();
     		setUnknown(correctQuestionsComp);
     		setUnknown(correctQuestionsPlayer);
-    		
-    		
-    		
+ 		  	
+    		String winner = checkWhoWon(resultForRoundOver,resultForRoundOverComp);
     		game.startNewRound();
     		questionCounter=0;
-    		return ok(roundover.render(String.valueOf(game.getCurrentRoundCount()-1),resultForRoundOver,resultForRoundOverComp,game.getPlayers().get(0).getName(),game.getPlayers().get(1).getName()));
+    		return ok(roundover.render(String.valueOf(pWonRounds),String.valueOf(cWonRounds),winner,String.valueOf(game.getCurrentRoundCount()-1),resultForRoundOver,resultForRoundOverComp,game.getPlayers().get(0).getName(),game.getPlayers().get(1).getName()));
     	}
     	
     	List<Question> questions = game.getCurrentRound().getQuestions();
@@ -212,6 +225,62 @@ public class Quiz extends Controller {
     	listToSet.add("unknown");
     	listToSet.add("unknown");
     	listToSet.add("unknown");
+    }
+    
+    private static String checkWhoWon(List<String> answersA,List<String> answersB){
+    	boolean equal=true; //prueft ob alle gegebenen Antworten die gleichen waren
+		for(int i=0;i<answersA.size();i++){
+			if(!answersA.get(i).equals(answersB.get(i))){
+				equal = false;
+			}
+		}
+		
+		String winner = "checkWhoWon failed";
+		
+		if(equal){
+			//evaluate Winner if Answers are equal - we get the time from the view, but without api its more or less irrelevant if you figth against computer
+			double rnd = Math.random();
+			if(rnd<=0.5){
+				winner=game.getPlayers().get(0).getName();
+				pWonRounds=pWonRounds+1;
+			} else {
+				winner=game.getPlayers().get(1).getName();
+				cWonRounds=cWonRounds+1;
+			}
+		} else {
+			int rightQuestionsP=0;
+			int rightQuestionsC=0;
+			for(int i=0;i<answersA.size();i++){
+				if(answersA.get(i).equals("correct")){
+					rightQuestionsP++;
+				}
+				if(answersB.get(i).equals("correct")){
+					rightQuestionsC++;
+				}
+			}
+			if(rightQuestionsP>rightQuestionsC){
+				//spieler hat gewonnen
+				winner=game.getPlayers().get(0).getName();
+				pWonRounds=pWonRounds+1;
+			} else {
+				if(rightQuestionsC>rightQuestionsP){
+					winner=game.getPlayers().get(1).getName();//computer hat gewonnen
+					cWonRounds=cWonRounds+1;
+				}	
+				if(rightQuestionsP==rightQuestionsC){
+					//wenn heir auch beide gleich viele Punkte haben bei den questions
+					double rnd = Math.random();
+	    			if(rnd<=0.5){
+	    				winner=game.getPlayers().get(0).getName();
+	    				pWonRounds=pWonRounds+1;
+	    			} else {
+	    				winner=game.getPlayers().get(1).getName();
+	    				cWonRounds=cWonRounds+1;
+	    			}
+				}
+			}
+		}
+		return winner;
     }
     
 

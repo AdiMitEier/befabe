@@ -1,4 +1,4 @@
-@(roundCount: String, resultForRoundOver: List[String],resultForRoundOverComp: List[String], user1: String, user2: String) 
+@(wonRoundsPlayerA:String, wonRoundsPlayerB:String,winner: String, roundCount: String, resultForRoundOver: List[String],resultForRoundOverComp: List[String], user1: String, user2: String) 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -24,7 +24,7 @@
             <!-- winner message -->
             <section id="roundwinner" aria-labelledby="roundwinnerheading">
                 <h2 id="roundwinnerheading" class="accessibility">Rundenzwischenstand</h2>
-                <p class="roundwinnermessage">Spieler 2 gewinnt Runde @roundCount!</p>
+                <p class="roundwinnermessage">@winner gewinnt Runde @roundCount!</p>
             </section>
         
             <!-- round info -->    
@@ -37,7 +37,7 @@
                         <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="@resultForRoundOver.get(1)"></span></li>
                         <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class="@resultForRoundOver.get(2)"></span></li>
                     </ul>
-                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
+                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">@wonRoundsPlayerA</span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
                     <span id="player2name" class="playername">@user2</span>
@@ -46,7 +46,7 @@
                         <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="@resultForRoundOverComp.get(1)"></span></li>
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="@resultForRoundOverComp.get(2)"></span></li>
                     </ul>
-                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
+                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">@wonRoundsPlayerB</span></p>
                 </div>
                 <form id="questionform" action="@routes.Quiz.quiz" method="post">
           			<input id="next" type="submit" value="Weiter"/>
