@@ -21,3 +21,12 @@ login.register=Registrieren
 login.globalError=Ungültiger Benutzername oder Passwort
 login.enroll=Anmelden
 
+quiz.title=Business Informatics Group Quiz - Quiz
+quiz.toQuestion=Zur Frage springen
+quiz.playerInfo=Spielerinformation
+quiz.question=Frage
+quiz.category=Kategorie
+quiz.next=weiter
+quiz.timer=Timer
+quiz.timeLeft=Verbleibende Zeit
+quiz.lastGame=Letztes Spiel

@@ -20,3 +20,13 @@ login.toRegistration = To Registration
 login.register=Register
 login.globalError=Invalid user or password
 login.enroll=Register
+
+quiz.title=Business Informatics Group Quiz - Quiz
+quiz.toQuestion=Jump to Question
+quiz.playerInfo=Player Information
+quiz.question=Question
+quiz.category=Category
+quiz.next=next
+quiz.timer=Timer
+quiz.timeLeft=Time Left
+quiz.lastGame=Last Game
