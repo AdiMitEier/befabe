@@ -1,4 +1,7 @@
 start.big = Business Informatics Group Quiz 
 start.title = Business Informatics Group Quiz - Start
 start.quiz = Quiz
+start.navi = Navigation
 start.startQuiz = Quiz starten
+start.logout = Abmelden
+start.cpr = © 2014 BIG Quiz

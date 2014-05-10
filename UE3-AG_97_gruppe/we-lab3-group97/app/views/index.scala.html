@@ -1,4 +1,4 @@
-﻿@import play.i18n.Messages
+﻿@import play.i18n._
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -13,7 +13,7 @@
     <body id="startpage">
         <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">@Messages.get("start.big")</span> @Messages.get("start.quiz")</h1></header>
         <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">@Messages.get("start.navi")</h2>
+            <h2 id="navheading" class="accessibility">@Messages.get("start.navi")"</h2>
             <ul>
                 <li><a id="logoutlink" href="@routes.Authentication.logout">@Messages.get("start.logout")</a></li>
             </ul>
@@ -26,6 +26,6 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">@Messages.get("start.cpr")</footer>
+        <footer role="contentinfo"> @Messages.get("start.cpr")</footer>
     </body>
 </html>
