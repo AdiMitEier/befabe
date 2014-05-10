@@ -1,30 +1,31 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿@import play.i18n.Messages
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Business Informatics Group Quiz - Start</title>
+        <title>@Messages.get("start.title")</title>
         <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/main.css")" />
         <script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/framework.js")" type="text/javascript"></script>
     </head>
     <body id="startpage">
-        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
+        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">@Messages.get("start.big")</span> @Messages.get("start.quiz")</h1></header>
         <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">Navigation</h2>
+            <h2 id="navheading" class="accessibility">@Messages.get("start.navi")</h2>
             <ul>
-                <li><a id="logoutlink" href="@routes.Authentication.logout">Abmelden</a></li>
+                <li><a id="logoutlink" href="@routes.Authentication.logout">@Messages.get("start.logout")</a></li>
             </ul>
         </nav>
         
         <section role="main" id="quiz">
         <form id="questionform" action="@routes.Quiz.quiz" method="post">
-          <input id="startgame" type="submit" value="Quiz starten"/>
+          <input id="startgame" type="submit" value="@Messages.get("start.startQuiz")"/>
          </form>
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">@Messages.get("start.cpr")</footer>
     </body>
 </html>
