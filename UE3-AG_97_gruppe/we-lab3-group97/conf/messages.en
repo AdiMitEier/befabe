@@ -1,7 +1,22 @@
-start.big = Business Informatics Group Quiz
-start.title = Business Informatics Group Quiz - Start
-start.quiz = Quiz
-start.navi = Navigation
-start.startQuiz = Start Quiz
-start.logout = logout
-start.cpr = © 2014 BIG Quiz
+big=Business Informatics Group
+cpr=© 2014 BIG Quiz
+logout=logout
+quiz=Quiz
+navi=Navigation
+login=login
+Login=Login
+jumpToLogin=Jump to Login
+
+start.title=Business Informatics Group Quiz - Start
+start.startQuiz=Start Quiz
+
+login.title=Business Informatics Group Quiz - Login
+login.clickToRegister=Click here to register
+login.username=Username
+login.pwd=Password
+login.regHeading=Registration
+login.notRegistered=Not registered
+login.toRegistration = To Registration
+login.register=Register
+login.globalError=Invalid user or password
+login.enroll=Register

@@ -11,11 +11,11 @@
         <script src="@routes.Assets.at("javascripts/framework.js")" type="text/javascript"></script>
     </head>
     <body id="startpage">
-        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">@Messages.get("start.big")</span> @Messages.get("start.quiz")</h1></header>
+        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">@Messages.get("big")</span> @Messages.get("quiz")</h1></header>
         <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">@Messages.get("start.navi")"</h2>
+            <h2 id="navheading" class="accessibility">@Messages.get("navi")</h2>
             <ul>
-                <li><a id="logoutlink" href="@routes.Authentication.logout">@Messages.get("start.logout")</a></li>
+                <li><a id="logoutlink" href="@routes.Authentication.logout">@Messages.get("logout")</a></li>
             </ul>
         </nav>
         
@@ -26,6 +26,6 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo"> @Messages.get("start.cpr")</footer>
+        <footer role="contentinfo">@Messages.get("cpr")</footer>
     </body>
 </html>

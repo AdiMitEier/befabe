@@ -1,21 +1,21 @@
 @(form: Form[Authentication.Login])
-
+@import play.i18n._
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Business Informatics Group Quiz - Login</title>
+        <title>@Messages.get("login.title")</title>
         <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/main.css")" />
     </head>
     <body id="loginpage">
-        <a class="accessibility" href="#login">Zum Login springen</a>
-        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
+        <a class="accessibility" href="#login">@Messages.get("jumpToLogin")</a>
+        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">@Messages.get("big")</span> @Messages.get("quiz")</h1></header>
         <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">Navigation</h2>
+            <h2 id="navheading" class="accessibility">@Messages.get("navi")</h2>
             <ul>
-                <li><a id="registerlink" title="Klicke hier um dich zu registrieren" href="register.html" accesskey="r">Registrieren</a></li>
+                <li><a id="registerlink" title="@Messages.get("login.clickToRegister")" href="register.html" accesskey="r">@Messages.get("login.register")</a></li>
             </ul>
         </nav>
         <!-- Login section -->
@@ -23,29 +23,30 @@
             <section id="login" aria-labelledby="loginheading">
                 @helper.form(routes.Authentication.authenticate) {
                     <fieldset>
-                        <legend id="loginheading">Login</legend>
-                        <label for="userName">Benutzername:</label>
+                        <legend id="loginheading">@Messages.get("Login")</legend>
+                        <label for="userName">@Messages.get("username"):</label>
                         <input id="username" name="username" type="text" required="required"/>
-                        <label for="password">Passwort:</label>
+                        <label for="password">@Messages.get("pwd"):</label>
                         <input id="password" name="password" type="password" required="required"/>
                         @if(form.hasGlobalErrors) { 
 			                <p class="error">
-			                    @form.globalError.message <!--  TODO: I18n für error -->
+			                    <!--@form.globalError.message  -->
+                                @Messages.get("´login.globalError")
 			                </p>
 			            }
-                        <input id="loginsubmit" type="submit" value="Anmelden"/>
+                        <input id="loginsubmit" type="submit" value="@Messages.get("login.enroll")"/>
                     </fieldset>
                 }
             </section>
             <!-- Register section -->
             <section id="register" aria-labelledby="registerheading">
-                <h2 id="registerheading" class="accessibility">Registrierung</h2>
-                <p>Nicht registriert?</p>
-                <a href="@routes.Registration.registration">Zur Registierung</a>
+                <h2 id="registerheading" class="accessibility">@Messages.get("login.regHeading")</h2>
+                <p>@Messages.get("login.notRegistered")?</p>
+                <a href="@routes.Registration.registration">@Messages.get("login.toRegistration")</a>
             </section>
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">@Messages.get("cpr")</footer>
     </body>
 </html>
