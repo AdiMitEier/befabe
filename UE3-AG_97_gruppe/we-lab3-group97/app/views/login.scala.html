@@ -15,7 +15,7 @@
         <nav role="navigation" aria-labelledby="navheading">
             <h2 id="navheading" class="accessibility">@Messages.get("navi")</h2>
             <ul>
-                <li><a id="registerlink" title="@Messages.get("login.clickToRegister")" href="register.html" accesskey="r">@Messages.get("login.register")</a></li>
+                <li><a id="registerlink" title="@Messages.get("clickToRegister")" href="register.html" accesskey="r">@Messages.get("register")</a></li>
             </ul>
         </nav>
         <!-- Login section -->
@@ -34,13 +34,13 @@
                                 @Messages.get("login.globalError")
 			                </p>
 			            }
-                        <input id="loginsubmit" type="submit" value="@Messages.get("login.enroll")"/>
+                        <input id="loginsubmit" type="submit" value="@Messages.get("enroll")"/>
                     </fieldset>
                 }
             </section>
             <!-- Register section -->
             <section id="register" aria-labelledby="registerheading">
-                <h2 id="registerheading" class="accessibility">@Messages.get("login.regHeading")</h2>
+                <h2 id="registerheading" class="accessibility">@Messages.get("regHeading")</h2>
                 <p>@Messages.get("login.notRegistered")?</p>
                 <a href="@routes.Registration.registration">@Messages.get("login.toRegistration")</a>
             </section>

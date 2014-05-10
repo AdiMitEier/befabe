@@ -7,26 +7,65 @@ login=login
 Login=Login
 jumpToLogin=Zum Login springen
 
+username=Benutzername
+pwd=Passwort
+
+regHeading=Registrierung
+register=Registrieren
+clickToRegister=Klicke hier um dich zu registrieren
+clickToLogout=Klicke hier um dich abzumelden
+clickTologin=Klicke hier um dich anzumelden
+enroll=Anmelden
+
 start.title=Business Informatics Group Quiz - Start
 start.startQuiz=Quiz starten
 
 login.title=Business Informatics Group Quiz - Login
-login.clickToRegister=Klicke hier um dich zu registrieren
-login.username=Benutzername
-login.pwd=Passwort
-login.regHeading=Registrierung
 login.notRegistered=Nicht registriert		
 login.toRegistration=Zur Registrierung
-login.register=Registrieren
 login.globalError=Ungültiger Benutzername oder Passwort
-login.enroll=Anmelden
+login.logoutSuccess=Sie wurden erfolgreich abgemeldet.
+
+
+playerInfo=Spielerinformation
 
 quiz.title=Business Informatics Group Quiz - Quiz
 quiz.toQuestion=Zur Frage springen
-quiz.playerInfo=Spielerinformation
 quiz.question=Frage
 quiz.category=Kategorie
 quiz.next=weiter
 quiz.timer=Timer
 quiz.timeLeft=Verbleibende Zeit
 quiz.lastGame=Letztes Spiel
+
+over.title=Business Informatics Group Quiz - Spielende
+over.jumpToValuation=Zur Spielwertung springen
+over.finalScore=Endstand
+over.winner={0} gewinnt
+over.wonRounds=Gewonnene Runden
+over.newGame=Neues Spiel
+
+register.title=Business Informatics Group Quiz- Registrieren
+register.jumpToReg=Zur Registrierung springen
+register.personalData=Persönliche Daten
+register.firstname=Vorname
+register.lastname=Nachname
+register.birthday=Geburtstag:
+register.errBirthday=Verwenden Sie bitte folgendes Datumsformat: dd.mm.yy (z.B. 24.12.2012)
+register.gender=Geschlecht
+register.male=Männlich
+register.female=Weiblich
+register.loginData = Login Daten
+register.errUsername=Der Benutzername muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten 
+register.errPwd=Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten 
+register.errUserExists=Benutzername existiert bereits
+register.requiredHint=Mit "*" gekennzeichnete Felder sind Pflichtfelder
+
+round.title=Business Informatics Group Quiz - Zwischenstand
+round.toRoundValidation=Zur Rundenwertung springen
+round.roundResult=Rundenzwischenstand
+round.winner={0} gewinnt Runde {1}
+round.question=Frage
+round.wonRounds=Gewonnene Runden
+round.next=Weiter
+

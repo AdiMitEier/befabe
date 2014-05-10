@@ -14,6 +14,7 @@ import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.registration;
+import play.i18n.*;
 
 public class Registration extends Controller{
 
@@ -35,7 +36,7 @@ public class Registration extends Controller{
     	query.setParameter("username", user.getUsername());
     	query.setMaxResults(1);
     	if(query.getResultList().size() > 0) {
-    		registrationForm.reject("username already exists");
+    		registrationForm.reject(Messages.get("register.errUserExists"));
     		return badRequest(views.html.registration.render(registrationForm));
     	}
     	

@@ -11,6 +11,7 @@ import play.db.jpa.Transactional;
 import play.mvc.Result;
 import play.mvc.Controller;
 import views.html.*;
+import play.i18n.*;
 
 public class Authentication extends Controller{
 	
@@ -21,7 +22,7 @@ public static class Login {
         
         public String validate() {
             if(SimpleUser.authenticateUser(username, password) == null) {
-                return "Invalid user or password";
+                return Messages.get("login.globalError");
             }
             return null;
         }
@@ -62,7 +63,7 @@ public static class Login {
     public static Result logout() {
         session().clear();
         Quiz.game=null;
-        flash("success", "You've been logged out");
+        flash("success", Messages.get("login.logoutSuccess"));
         return redirect(
             routes.Authentication.login()
         );

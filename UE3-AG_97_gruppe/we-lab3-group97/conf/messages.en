@@ -7,26 +7,64 @@ login=login
 Login=Login
 jumpToLogin=Jump to Login
 
+username=Username
+pwd=Password
+
+regHeading=Registration
+register=Register
+clickToRegister=Click here to register
+clickToLogout=Click here to logout
+clickToLogin=Click here to login
+enroll=Register
+
 start.title=Business Informatics Group Quiz - Start
 start.startQuiz=Start Quiz
 
 login.title=Business Informatics Group Quiz - Login
-login.clickToRegister=Click here to register
-login.username=Username
-login.pwd=Password
-login.regHeading=Registration
 login.notRegistered=Not registered
 login.toRegistration = To Registration
-login.register=Register
 login.globalError=Invalid user or password
-login.enroll=Register
+login.logoutSuccess=You've been successfully logged out.
+
+
+playerInfo=Player Information
 
 quiz.title=Business Informatics Group Quiz - Quiz
 quiz.toQuestion=Jump to Question
-quiz.playerInfo=Player Information
 quiz.question=Question
 quiz.category=Category
 quiz.next=next
 quiz.timer=Timer
 quiz.timeLeft=Time Left
 quiz.lastGame=Last Game
+
+over.title=Business Informatics Group Quiz - Game End
+over.jumpToValuation=Jump to Gamevaluation
+over.finalScore=Final Score
+over.winner={0} wins
+over.wonRounds=Won Rounds
+over.newGame=New Game
+
+register.title=Business Informatics Group Quiz- Registrieren
+register.jumpToReg=Jump to Registration
+register.personalData=Personal Data
+register.firstname=First Name
+register.lastname=Last Name
+register.birthday=Birthday:
+register.errBirthday=Please only use the following date formatting: dd.mm.yy (e.g. 24.12.2012)
+register.gender=Gender
+register.male=Male
+register.female=Female
+register.loginData= Login Data
+register.errUsername=Username must have at least 4 and at most 8 Characters
+register.errPwd=Passwort must have at least 4 and at most 8 Characters. 
+register.errUserExists=username already exists
+register.requiredHint=Fields marked with "*" are mandatory fields
+
+round.title=Business Informatics Group Quiz - Intermediate Result
+round.toRoundValidation=Jump to Round Validation
+round.roundResult=Round Intermediate Result
+round.winner={0} wins round {1}
+round.question=Question
+round.wonRounds=Won Rounds
+round.next=next
