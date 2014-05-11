@@ -61,6 +61,7 @@ register.errUsername=Username must have at least 4 and at most 8 Characters
 register.errPwd=Passwort must have at least 4 and at most 8 Characters. 
 register.errUserExists=username already exists
 register.requiredHint=Fields marked with "*" are mandatory fields
+register.birthdateIsInFuture=The birthdate could not be in the future
 
 round.title=Business Informatics Group Quiz - Intermediate Result
 round.toRoundValidation=Jump to Round Validation

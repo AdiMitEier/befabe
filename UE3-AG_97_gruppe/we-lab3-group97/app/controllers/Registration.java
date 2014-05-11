@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -30,6 +31,13 @@ public class Registration extends Controller{
     		return badRequest(views.html.registration.render(registrationForm));
     	}
     	SimpleUser user = Form.form(SimpleUser.class).bindFromRequest().get();
+    	if(user.getBirthdate() != null) {
+    		Date now = new Date();
+    		if(user.getBirthdate().after(now)) {
+    			registrationForm.reject(Messages.get("register.birthdateIsInFuture"));
+    			return badRequest(views.html.registration.render(registrationForm));
+    		}
+    	}
     	EntityManager entityManager = JPA.em();
     	
     	Query query = entityManager.createQuery("SELECT u FROM SimpleUser u WHERE u.username = :username");

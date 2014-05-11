@@ -61,6 +61,7 @@ register.errUsername=Der Benutzername muss mindestens 4 Zeichen und darf maximal
 register.errPwd=Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten 
 register.errUserExists=Benutzername existiert bereits
 register.requiredHint=Mit "*" gekennzeichnete Felder sind Pflichtfelder
+register.birthdateIsInFuture=Das Geburtsdatum kann nicht in der Zukunft liegen
 
 round.title=Business Informatics Group Quiz - Zwischenstand
 round.toRoundValidation=Zur Rundenwertung springen
