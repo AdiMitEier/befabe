@@ -24,6 +24,7 @@ import at.ac.tuwien.big.we14.lab2.api.impl.PlayQuizFactory;
 import models.SelectedOptions;
 import models.SimpleUser;
 import play.*;
+import play.api.i18n.Lang;
 import play.api.mvc.Session;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -32,6 +33,8 @@ import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.*;
 import views.html.*;
+import play.i18n.*;
+import scala.Option;
 
 @Security.Authenticated(Secured.class)
 public class Quiz extends Controller {
@@ -162,8 +165,19 @@ public class Quiz extends Controller {
 
 		if(game==null){
 			//if game is new
-        	QuizFactory factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
-    		game=factory.createQuizGame();
+			QuizFactory factory;
+			
+			//get questions dependant on language
+			String lang = play.i18n.Lang.defaultLang().toString();
+			if(lang.equals("de")){
+		       	factory = new PlayQuizFactory(Play.application().configuration().getString("questions.de"),user);
+		       	Logger.info("Questions loaded in german");
+			}else{
+		       	factory = new PlayQuizFactory(Play.application().configuration().getString("questions.en"),user);
+		       	Logger.info("Questions loaded in english");
+			}
+			
+			game=factory.createQuizGame();
     		game.getPlayers().get(1).setName("Computer");//hier wird Computer als Name für den zweiten Gegneer gesetzt
     		correctQuestionsPlayer=new ArrayList<String>();
     		correctQuestionsComp=new ArrayList<String>();

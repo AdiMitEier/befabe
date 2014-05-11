@@ -15,7 +15,7 @@ register=Register
 clickToRegister=Click here to register
 clickToLogout=Click here to logout
 clickToLogin=Click here to login
-enroll=Register
+enroll=Login
 
 start.title=Business Informatics Group Quiz - Start
 start.startQuiz=Start Quiz
@@ -37,6 +37,7 @@ quiz.next=next
 quiz.timer=Timer
 quiz.timeLeft=Time Left
 quiz.lastGame=Last Game
+quiz.never=Never
 
 over.title=Business Informatics Group Quiz - Game End
 over.jumpToValuation=Jump to Gamevaluation

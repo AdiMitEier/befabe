@@ -37,6 +37,7 @@ quiz.next=weiter
 quiz.timer=Timer
 quiz.timeLeft=Verbleibende Zeit
 quiz.lastGame=Letztes Spiel
+quiz.never=Nie
 
 over.title=Business Informatics Group Quiz - Spielende
 over.jumpToValuation=Zur Spielwertung springen

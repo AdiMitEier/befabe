@@ -1,0 +1,30 @@
+login.scala.html:
+	WAI: 	no proplems
+	xhtml:	Fatal Error: Illegal processing instruction target (found xml)
+		-> <?xml tag fängt nicht in der ersten zeile an wegen play @tags (wird zu whitespace, wenn gelöscht keine probleme
+
+registration.scala.html:
+	WAI:	no problems (only potential)	
+	xhtml:	 <dt><label for="birthdate">Birthday:</label></dt>
+			<dd>
+				<input type="date" id="birthdate" name="birthdate" value="" >
+			</dd> ->Fatal Error: required character (found d) (expected i)
+	Anmerkung: sind die <div id="error..xy"...> nötig? wofür?
+		   Anmelden -> leerer Link
+index.scala.htlm: 
+	WAI:	no problems
+	xhtml: 	no problems
+
+quiz.scala.htlm:
+	WAI:	no problems
+	xhtml:	same <?xml error
+
+
+roundover.scala.html:
+	WAI: 	no problems
+	xhtml:	same <?xml error
+
+quizover.scala.html:
+	WAI:	no problems
+	xhtml: 	same <?xml error
+

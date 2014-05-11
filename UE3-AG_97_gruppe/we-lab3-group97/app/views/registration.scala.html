@@ -1,7 +1,5 @@
 @(form: Form[SimpleUser])
 @import play.i18n._
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -48,19 +46,22 @@
                     <label for="username">@Messages.get("username")*:</label>
                     <input id="username" type="text" required="required" name="username"/>
                     @for(error <- form("username").errors) {
-					    <p>@error.message</p> <!--  TODO: I18n für error -->
+					    <!--<p>@error.message</p>   TODO: I18n für error -->
+					    <p>@Messages.get("register.errUsername").</p>
 					}
-                    <div id="error_msg_username" class="hide" role="alert">@Messages.get("register.errUsername").</div>
+                    <!-- <div id="error_msg_username" class="hide" role="alert">@Messages.get("register.errUsername").</div> -->
                     
                     <label for="password">Passwort*:</label>
                     <input id="password" type="password" required="required" name="password"/>
                     @for(error <- form("password").errors) {
-					    <p>@error.message</p> <!--  TODO: I18n für error -->
-					}
-                    <div id="error_msg_password" class="hide" role="alert">@Messages.get("register.errPwd").</div>
+					    <!--  <p>@error.message</p> TODO: I18n für error -->
+					    <p>@Messages.get("register.errPwd").</p>
+					
+                    <!-- <div id="error_msg_password" class="hide" role="alert">@Messages.get("register.errPwd").</div> -->
+                    }
                     @if(form.hasGlobalErrors) {
 					    <p class="error">
-					         @form.globalError.message<!--  TODO: I18n für error -->
+					         @form.globalError.message  <!-- TODO: I18n für error -->
 					    </p>
 					}
                     <input id="registersubmit" type="submit" value="@Messages.get("register")" accesskey="s"/>
