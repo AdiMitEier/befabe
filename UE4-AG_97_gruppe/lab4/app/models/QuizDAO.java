@@ -3,7 +3,9 @@ package models;
 import play.db.jpa.JPA;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+
 import java.util.List;
 
 /**
@@ -56,8 +58,7 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public void persist(BaseEntity entity) {
-        // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        em().persist(entity);
     }
 
 
@@ -96,8 +97,9 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public <E extends BaseEntity> List<E> findEntities(Class<E> entityClazz) {
-        // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+    	Query query = em().createQuery("SELECT e FROM :CLASS e");
+    	query.setParameter("CLASS", entityClazz.getSimpleName());
+        return query.getResultList();
     }
 
 
