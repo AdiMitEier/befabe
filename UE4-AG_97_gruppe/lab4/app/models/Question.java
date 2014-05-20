@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Represents a question, which is stored in the DB
@@ -22,6 +24,7 @@ public class Question extends BaseEntity {
 
 
     //A list of choices belonging to this question
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
     private List<Choice> choices = new ArrayList<Choice>();
 
 

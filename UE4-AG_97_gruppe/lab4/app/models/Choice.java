@@ -1,5 +1,7 @@
 package models;
 
+import javax.persistence.ManyToOne;
+
 /**
  * Represents a choice which is stored in the DB
  */
@@ -13,6 +15,7 @@ public class Choice extends BaseEntity {
     private Boolean correctAnswer;
 
     //The question this choice belongs to
+    @ManyToOne
     private Question question;
 
     /**
