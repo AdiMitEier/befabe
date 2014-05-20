@@ -70,8 +70,8 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public <T extends BaseEntity> T merge(T entity) {
-        // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        em().merge(entity);
+        return entity;
     }
 
     /**
@@ -83,8 +83,7 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public <T extends BaseEntity> T findEntity(Long id, Class<T> entityClazz) {
-        // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        return em().find(entityClazz, id);
     }
 
 
