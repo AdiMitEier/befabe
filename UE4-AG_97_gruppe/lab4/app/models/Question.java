@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.ManyToOne;
+
 /**
  * Represents a question, which is stored in the DB
  */
@@ -15,6 +17,7 @@ public class Question extends BaseEntity {
     private BigDecimal maxtime;
 
     //The category to which this question belongs to
+    @ManyToOne
     private Category category;
 
 
