@@ -5,6 +5,11 @@ import play.db.jpa.JPA;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
 
 import java.util.List;
 
@@ -97,9 +102,13 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public <E extends BaseEntity> List<E> findEntities(Class<E> entityClazz) {
-    	Query query = em().createQuery("SELECT e FROM :CLASS e");
-    	query.setParameter("CLASS", entityClazz.getSimpleName());
-        return query.getResultList();
+//    	Query query = em().createQuery("SELECT e FROM :CLASS e");
+//    	query.setParameter("CLASS", entityClazz.getSimpleName());
+//        return query.getResultList();
+        
+        Criteria criteria = ((Session) em().getDelegate()).createCriteria(entityClazz);
+        return criteria.list();
+        
     }
 
 
