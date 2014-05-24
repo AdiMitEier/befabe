@@ -1,3 +1,15 @@
 2014-05-24 23:11:45,308 - [INFO] - from play in pool-4-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
+2014-05-24 23:16:08,436 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-24 23:16:12,925 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-24 23:16:15,418 - [INFO] - from application in play-internal-execution-context-1 
+Data from json file 'data.json' inserted.
+
+2014-05-24 23:16:15,456 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
