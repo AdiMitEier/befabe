@@ -1,10 +1,12 @@
 package models;
 
 import javax.persistence.ManyToOne;
+import javax.persistence.Entity;
 
 /**
  * Represents a choice which is stored in the DB
  */
+@Entity
 public class Choice extends BaseEntity {
 
 

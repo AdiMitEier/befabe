@@ -1,14 +1,19 @@
 package models;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Entity;
 /**
  * Represents a category, which is stored in the DB
  */
+@Entity
 public class Category extends BaseEntity {
 
 
@@ -17,6 +22,7 @@ public class Category extends BaseEntity {
 
     //A list of questions in this category
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Question> questions = new ArrayList<Question>();
 
     /**

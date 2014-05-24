@@ -1,16 +1,18 @@
 package models;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 /**
  * Represents a question, which is stored in the DB
  */
+@Entity
 public class Question extends BaseEntity {
 
 
@@ -25,6 +27,7 @@ public class Question extends BaseEntity {
 
     //A list of choices belonging to this question
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Choice> choices = new ArrayList<Choice>();
 
 

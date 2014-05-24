@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/bernd/Dropbox/Studium/Web%20Engineering/befabe/UE4-AG_97_gruppe/lab4/}lab4...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/Gruim/Bernd/Studium/WebEngineering/befabe/UE4-AG_97_gruppe/lab4/}lab4...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4300b119[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@42fa6be2[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -806,9 +806,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-cache_2.10;2.2.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-cache_2.10;2.2.2 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/com.typesafe.play/play-cache_2.10/2.2.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\com.typesafe.play\play-cache_2.10\2.2.2\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for com.typesafe.play#play-cache_2.10;2.2.2[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.typesafe.play#play-cache_2.10;2.2.2[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom[0m
@@ -820,7 +820,12 @@
 [0m[[0mdebug[0m] [0m	Typesafe Releases Repository: downloading http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom[0m
 [0m[[0mdebug[0m] [0m	Typesafe Releases Repository: downloading http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe.play#play-cache_2.10;2.2.2!play-cache_2.10.pom(pom.original) (988ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe.play#play-cache_2.10;2.2.2!play-cache_2.10.pom(pom.original) (673ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\com.typesafe.play\play-cache_2.10\2.2.2\jars\play-cache_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar[0m
 [0m[[0mdebug[0m] [0m	found com.typesafe.play#play-cache_2.10;2.2.2 in Typesafe Releases Repository[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.2 [compile->compile][0m
@@ -829,9 +834,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.2->net.sf.ehcache#ehcache-core;2.6.6 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving net.sf.ehcache#ehcache-core;2.6.6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: net.sf.ehcache#ehcache-core;2.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: net.sf.ehcache#ehcache-core;2.6.6[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: net.sf.ehcache#ehcache-core;2.6.6[0m
-[0m[[0mdebug[0m] [0m	found net.sf.ehcache#ehcache-core;2.6.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\net.sf.ehcache\ehcache-core\2.6.6\ivys\ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: found md file for net.sf.ehcache#ehcache-core;2.6.6[0m
+[0m[[0mdebug[0m] [0m		=> C:\play-2.2.3\repository\local\net.sf.ehcache\ehcache-core\2.6.6\ivys\ivy.xml (2.6.6)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache-core;2.6.6!ivy.xml(ivy.original)[0m
+[0m[[0mdebug[0m] [0m	found net.sf.ehcache#ehcache-core;2.6.6 in local[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.2->net.sf.ehcache#ehcache-core;2.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.hibernate#hibernate-core;3.5.1-Final {provided=[compile(*), provided(*), runtime(*), master(*)]} => dependency: org.hibernate#hibernate-core;3.3.2.GA {provided=[compile(*), provided(*), runtime(*), master(*)]}[0m
@@ -852,9 +859,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.12.Final [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.hibernate#hibernate-entitymanager;4.2.12.Final ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate#hibernate-entitymanager;4.2.12.Final {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.hibernate/hibernate-entitymanager/4.2.12.Final/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.hibernate\hibernate-entitymanager\4.2.12.Final\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.hibernate#hibernate-entitymanager;4.2.12.Final[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.hibernate#hibernate-entitymanager;4.2.12.Final[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.hibernate#hibernate-entitymanager;4.2.12.Final[0m
@@ -863,9 +870,9 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-entitymanager;4.2.12.Final!hibernate-entitymanager.pom(pom.original) (390ms)[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.hibernate/hibernate-entitymanager/4.2.12.Final/jars/hibernate-entitymanager.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-entitymanager;4.2.12.Final!hibernate-entitymanager.pom(pom.original) (442ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.hibernate\hibernate-entitymanager\4.2.12.Final\jars\hibernate-entitymanager.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar[0m
 [0m[[0mdebug[0m] [0m	found org.hibernate#hibernate-entitymanager;4.2.12.Final in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.12.Final [compile->runtime][0m
@@ -907,9 +914,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.12.Final->org.hibernate#hibernate-core;4.2.12.Final [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.hibernate#hibernate-core;4.2.12.Final ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate#hibernate-core;4.2.12.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.hibernate/hibernate-core/4.2.12.Final/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.hibernate\hibernate-core\4.2.12.Final\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.hibernate#hibernate-core;4.2.12.Final[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.hibernate#hibernate-core;4.2.12.Final[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.hibernate#hibernate-core;4.2.12.Final[0m
@@ -918,9 +925,9 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-core;4.2.12.Final!hibernate-core.pom(pom.original) (1073ms)[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.hibernate/hibernate-core/4.2.12.Final/jars/hibernate-core.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.jar[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-core;4.2.12.Final!hibernate-core.pom(pom.original) (469ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.hibernate\hibernate-core\4.2.12.Final\jars\hibernate-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.jar[0m
 [0m[[0mdebug[0m] [0m	found org.hibernate#hibernate-core;4.2.12.Final in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.12.Final->org.hibernate#hibernate-core;4.2.12.Final [compile->compile(*)][0m
@@ -997,9 +1004,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.twitter4j#twitter4j-core;4.0.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.twitter4j#twitter4j-core;4.0.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.twitter4j#twitter4j-core;4.0.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.twitter4j/twitter4j-core/4.0.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.twitter4j\twitter4j-core\4.0.1\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.twitter4j#twitter4j-core;4.0.1[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.twitter4j#twitter4j-core;4.0.1[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.twitter4j#twitter4j-core;4.0.1[0m
@@ -1008,9 +1015,9 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.twitter4j#twitter4j-core;4.0.1!twitter4j-core.pom(pom.original) (403ms)[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.twitter4j/twitter4j-core/4.0.1/jars/twitter4j-core.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.twitter4j#twitter4j-core;4.0.1!twitter4j-core.pom(pom.original) (449ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.twitter4j\twitter4j-core\4.0.1\jars\twitter4j-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar[0m
 [0m[[0mdebug[0m] [0m	found org.twitter4j#twitter4j-core;4.0.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.twitter4j#twitter4j-core;4.0.1 [compile->runtime][0m
@@ -1019,9 +1026,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.apache.jena#apache-jena-libs;2.10.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#apache-jena-libs;2.10.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#apache-jena-libs;2.10.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/apache-jena-libs/2.10.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\apache-jena-libs\2.10.1\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.jena#apache-jena-libs;2.10.1[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache.jena#apache-jena-libs;2.10.1[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.jena#apache-jena-libs;2.10.1[0m
@@ -1030,12 +1037,12 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#apache-jena-libs;2.10.1!apache-jena-libs.pom(pom.original) (350ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#apache-jena-libs;2.10.1!apache-jena-libs.pom(pom.original) (478ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-parent;6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-parent;6 {}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-parent/6/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-parent\6\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.jena#jena-parent;6[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-parent/6/jena-parent-6.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-parent/6/jena-parent-6.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache.jena#jena-parent;6[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-parent/6/jena-parent-6.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.jena#jena-parent;6[0m
@@ -1044,12 +1051,12 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-parent/6/jena-parent-6.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-parent/6/jena-parent-6.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-parent/6/jena-parent-6.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-parent;6!jena-parent.pom(pom.original) (361ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-parent;6!jena-parent.pom(pom.original) (448ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache#apache;10 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache#apache;10 {}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache/apache/10/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache\apache\10\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache#apache;10[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/apache/10/apache-10.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/apache/10/apache-10.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache#apache;10[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/apache/10/apache-10.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache#apache;10[0m
@@ -1058,21 +1065,21 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/apache/10/apache-10.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/apache/10/apache-10.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/apache/10/apache-10.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache#apache;10!apache.pom(pom.original) (381ms)[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache/apache/10/jars/apache.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/apache/10/apache-10.jar[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache#apache;10!apache.pom(pom.original) (442ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache\apache\10\jars\apache.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/apache/10/apache-10.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/apache/10/apache-10.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/apache/apache/10/apache-10.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/apache/apache/10/apache-10.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/apache/apache/10/apache-10.jar[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-parent/6/jars/jena-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-parent/6/jena-parent-6.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-parent\6\jars\jena-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-parent/6/jena-parent-6.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-parent/6/jena-parent-6.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/apache/jena/jena-parent/6/jena-parent-6.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/apache/jena/jena-parent/6/jena-parent-6.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/apache/jena/jena-parent/6/jena-parent-6.jar[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/apache-jena-libs/2.10.1/jars/apache-jena-libs.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\apache-jena-libs\2.10.1\jars\apache-jena-libs.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/apache/jena/apache-jena-libs/2.10.1/apache-jena-libs-2.10.1.jar[0m
@@ -1083,9 +1090,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#apache-jena-libs;2.10.1->org.apache.jena#jena-tdb;0.10.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-tdb;0.10.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-tdb;0.10.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-tdb/0.10.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-tdb\0.10.1\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.jena#jena-tdb;0.10.1[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache.jena#jena-tdb;0.10.1[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.jena#jena-tdb;0.10.1[0m
@@ -1094,22 +1101,22 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-tdb;0.10.1!jena-tdb.pom(pom.original) (361ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-tdb;0.10.1!jena-tdb.pom(pom.original) (453ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-parent;6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-parent;6 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.jena#jena-parent;6[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.apache.jena#jena-parent;6[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-tdb/0.10.1/jars/jena-tdb.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-tdb\0.10.1\jars\jena-tdb.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar[0m
 [0m[[0mdebug[0m] [0m	found org.apache.jena#jena-tdb;0.10.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#apache-jena-libs;2.10.1->org.apache.jena#jena-tdb;0.10.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#jena-tdb;0.10.1->org.apache.jena#jena-arq;2.10.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-arq;2.10.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@412509f5[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-arq/2.10.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@80fcc0e[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-arq\2.10.1\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.jena#jena-arq;2.10.1[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache.jena#jena-arq;2.10.1[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.jena#jena-arq;2.10.1[0m
@@ -1118,13 +1125,13 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-arq;2.10.1!jena-arq.pom(pom.original) (350ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-arq;2.10.1!jena-arq.pom(pom.original) (424ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-parent;6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-parent;6 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.jena#jena-parent;6[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.apache.jena#jena-parent;6[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-arq/2.10.1/jars/jena-arq.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-arq\2.10.1\jars\jena-arq.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m	found org.apache.jena#jena-arq;2.10.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#jena-tdb;0.10.1->org.apache.jena#jena-arq;2.10.1 [compile->compile(*)][0m
@@ -1132,10 +1139,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#jena-arq;2.10.1->org.apache.jena#jena-core;2.10.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0mexcluding dependency: org.apache.httpcomponents#httpclient;4.2.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-core;2.10.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@73af8f99[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-core/2.10.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3f162d30[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-core\2.10.1\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.jena#jena-core;2.10.1[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache.jena#jena-core;2.10.1[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.jena#jena-core;2.10.1[0m
@@ -1144,13 +1151,13 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-core;2.10.1!jena-core.pom(pom.original) (349ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-core;2.10.1!jena-core.pom(pom.original) (438ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-parent;6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-parent;6 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.jena#jena-parent;6[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.apache.jena#jena-parent;6[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-core/2.10.1/jars/jena-core.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-core\2.10.1\jars\jena-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m	found org.apache.jena#jena-core;2.10.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#jena-arq;2.10.1->org.apache.jena#jena-core;2.10.1 [compile->compile(*)][0m
@@ -1158,9 +1165,9 @@
 [0m[[0mdebug[0m] [0mexcluding dependency: org.apache.httpcomponents#httpclient;4.2.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-iri;0.9.6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-iri;0.9.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-iri/0.9.6/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-iri\0.9.6\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.jena#jena-iri;0.9.6[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.apache.jena#jena-iri;0.9.6[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.jena#jena-iri;0.9.6[0m
@@ -1169,13 +1176,13 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-iri;0.9.6!jena-iri.pom(pom.original) (352ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-iri;0.9.6!jena-iri.pom(pom.original) (446ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.jena#jena-parent;6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.jena#jena-parent;6 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.jena#jena-parent;6[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.apache.jena#jena-parent;6[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.apache.jena/jena-iri/0.9.6/jars/jena-iri.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.apache.jena\jena-iri\0.9.6\jars\jena-iri.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar[0m
 [0m[[0mdebug[0m] [0m	found org.apache.jena#jena-iri;0.9.6 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#jena-core;2.10.1->org.apache.jena#jena-iri;0.9.6 [compile->compile(*)][0m
@@ -1188,9 +1195,9 @@
 [0m[[0mdebug[0m] [0mexcluding dependency: org.apache.httpcomponents#httpclient;4.2.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
 [0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-log4j12;1.6.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-log4j12;1.6.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.slf4j/slf4j-log4j12/1.6.4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.slf4j\slf4j-log4j12\1.6.4\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.slf4j#slf4j-log4j12;1.6.4[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.slf4j#slf4j-log4j12;1.6.4[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.slf4j#slf4j-log4j12;1.6.4[0m
@@ -1199,12 +1206,12 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-log4j12;1.6.4!slf4j-log4j12.pom(pom.original) (412ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-log4j12;1.6.4!slf4j-log4j12.pom(pom.original) (419ms)[0m
 [0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-parent;1.6.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-parent;1.6.4 {}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.slf4j/slf4j-parent/1.6.4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.slf4j\slf4j-parent\1.6.4\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.slf4j#slf4j-parent;1.6.4[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.slf4j#slf4j-parent;1.6.4[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.slf4j#slf4j-parent;1.6.4[0m
@@ -1213,15 +1220,15 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-parent;1.6.4!slf4j-parent.pom(pom.original) (379ms)[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.slf4j/slf4j-parent/1.6.4/jars/slf4j-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.jar[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-parent;1.6.4!slf4j-parent.pom(pom.original) (484ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.slf4j\slf4j-parent\1.6.4\jars\slf4j-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/slf4j/slf4j-parent/1.6.4/slf4j-parent-1.6.4.jar[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/org.slf4j/slf4j-log4j12/1.6.4/jars/slf4j-log4j12.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\org.slf4j\slf4j-log4j12\1.6.4\jars\slf4j-log4j12.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-log4j12;1.6.4 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.jena#jena-iri;0.9.6->org.slf4j#slf4j-log4j12;1.6.4 [compile->compile(*)][0m
@@ -1233,9 +1240,9 @@
 [0m[[0mdebug[0m] [0mexcluding dependency: org.apache.httpcomponents#httpclient;4.2.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
 [0m[[0minfo[0m] [0mResolving log4j#log4j;1.2.16 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: log4j#log4j;1.2.16 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/log4j/log4j/1.2.16/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\log4j\log4j\1.2.16\ivys\ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for log4j#log4j;1.2.16[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.pom[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.pom[0m
 [0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for log4j#log4j;1.2.16[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for log4j#log4j;1.2.16[0m
@@ -1244,9 +1251,9 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] log4j#log4j;1.2.16!log4j.pom(pom.original) (378ms)[0m
-[0m[[0mdebug[0m] [0m		tried /usr/share/playframework2/repository/local/log4j/log4j/1.2.16/bundles/log4j.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/home/bernd/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] log4j#log4j;1.2.16!log4j.pom(pom.original) (569ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\log4j\log4j\1.2.16\bundles\log4j.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Gruim/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.jar[0m
 [0m[[0mdebug[0m] [0m	found log4j#log4j;1.2.16 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.slf4j#slf4j-log4j12;1.6.4->log4j#log4j;1.2.16 [compile->compile(*)][0m
@@ -7270,7 +7277,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/we14-lab4-solution/we14-lab4-solution_2.10/1.0-SNAPSHOT/resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\we14-lab4-solution\we14-lab4-solution_2.10\1.0-SNAPSHOT\resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.2!play-java-jdbc_2.10.jar[0m
@@ -7281,20 +7288,20 @@
 [0m[[0mdebug[0m] [0m	Typesafe Releases Repository: downloading http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar[0m
 [0m[[0mdebug[0m] [0m	Typesafe Releases Repository: downloading http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.2/play-cache_2.10-2.2.2.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe.play#play-cache_2.10;2.2.2!play-cache_2.10.jar (1467ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe.play#play-cache_2.10;2.2.2!play-cache_2.10.jar (1117ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/4.2.12.Final/hibernate-entitymanager-4.2.12.Final.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-entitymanager;4.2.12.Final!hibernate-entitymanager.jar (705ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-entitymanager;4.2.12.Final!hibernate-entitymanager.jar (1063ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.code.gson#gson;2.2!gson.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.twitter4j#twitter4j-core;4.0.1!twitter4j-core.jar (490ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.twitter4j#twitter4j-core;4.0.1!twitter4j-core.jar (760ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.2!play_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.2!play-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.jolbox#bonecp;0.8.0.RELEASE!bonecp.jar(bundle)[0m
@@ -7353,6 +7360,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml#classmate;0.8.0!classmate.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] dom4j#dom4j;1.6.1!dom4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final!hibernate-jpa-2.0-api.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\play-2.2.3\repository\local\net.sf.ehcache\ehcache-core\2.6.6\jars\ehcache-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache-core;2.6.6!ehcache-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.javassist#javassist;3.18.1-GA!javassist.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final!jboss-transaction-api_1.1_spec.jar[0m
@@ -7362,44 +7370,44 @@
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/hibernate/hibernate-core/4.2.12.Final/hibernate-core-4.2.12.Final.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-core;4.2.12.Final!hibernate-core.jar (2067ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.hibernate#hibernate-core;4.2.12.Final!hibernate-core.jar (5721ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] antlr#antlr;2.7.7!antlr.jar[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-tdb/0.10.1/jena-tdb-0.10.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-tdb;0.10.1!jena-tdb.jar (539ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-tdb;0.10.1!jena-tdb.jar (1050ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-log4j12;1.6.4!slf4j-log4j12.jar (386ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-log4j12;1.6.4!slf4j-log4j12.jar (473ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/log4j/log4j/1.2.16/log4j-1.2.16.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] log4j#log4j;1.2.16!log4j.jar(bundle) (532ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] log4j#log4j;1.2.16!log4j.jar(bundle) (1011ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-arq/2.10.1/jena-arq-2.10.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-arq;2.10.1!jena-arq.jar (1316ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-arq;2.10.1!jena-arq.jar (3376ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-core/2.10.1/jena-core-2.10.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-core;2.10.1!jena-core.jar (959ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-core;2.10.1!jena-core.jar (2083ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/apache/jena/jena-iri/0.9.6/jena-iri-0.9.6.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-iri;0.9.6!jena-iri.jar (462ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.jena#jena-iri;0.9.6!jena-iri.jar (583ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-test_2.10;2.2.2!play-test_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit;4.11!junit.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.specs2#specs2_2.10;2.1.1!specs2_2.10.jar[0m
@@ -7460,19 +7468,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 17393ms :: artifacts dl 9098ms[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT compile produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT runtime produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT test produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT provided produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT optional produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT compile-internal produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT runtime-internal produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT test-internal produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT plugin produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT sources produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT docs produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT pom produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT scala-tool produced in /home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/target/resolution-cache/reports/we14-lab4-solution-we14-lab4-solution_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (17393ms resolve - 9098ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 21055ms :: artifacts dl 17468ms[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT compile produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT runtime produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT test produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT provided produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT optional produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT compile-internal produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT runtime-internal produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT test-internal produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT plugin produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT sources produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT docs produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT pom produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for we14-lab4-solution#we14-lab4-solution_2.10;1.0-SNAPSHOT scala-tool produced in C:\Users\Gruim\Bernd\Studium\WebEngineering\befabe\UE4-AG_97_gruppe\lab4\target\resolution-cache\reports\we14-lab4-solution-we14-lab4-solution_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (21055ms resolve - 17468ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

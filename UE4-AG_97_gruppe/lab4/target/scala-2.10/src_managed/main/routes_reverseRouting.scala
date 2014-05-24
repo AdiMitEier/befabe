@@ -1,6 +1,6 @@
-// @SOURCE:/home/bernd/Dropbox/Studium/Web Engineering/befabe/UE4-AG_97_gruppe/lab4/conf/routes
-// @HASH:2f2bf6583c725f7cc2e8d48e65c92c354ad2096b
-// @DATE:Tue May 20 10:09:03 CEST 2014
+// @SOURCE:C:/Users/Gruim/Bernd/Studium/WebEngineering/befabe/UE4-AG_97_gruppe/lab4/conf/routes
+// @HASH:92b38015dabd1df9f29f2a799d7e288555d68e3c
+// @DATE:Sat May 24 20:03:40 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._

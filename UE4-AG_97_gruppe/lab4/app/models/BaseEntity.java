@@ -1,13 +1,13 @@
 package models;
 
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
  * Base entity for all JPA classes
  */
-@Entity
+@MappedSuperclass
 public class BaseEntity {
 
 	@Id
