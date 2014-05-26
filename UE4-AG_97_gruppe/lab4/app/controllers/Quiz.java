@@ -160,6 +160,17 @@ public class Quiz extends Controller {
 	public static Result endResult() {
 		QuizGame game = cachedGame();
 		if (game != null && isGameOver(game)) {
+			QuizUser winner = game.getWinner();
+			List<QuizUser> players = game.getPlayers();
+			QuizUser loser = null;
+			
+			for(QuizUser p:players){
+				if(!p.equals(winner))
+					loser=p;
+			}
+			play.Logger.info(winner.toString() +"/"+ winner.getName().toString());
+			play.Logger.info(loser.toString() +"/"+ loser.getName().toString());
+			
 			return ok(quizover.render(game));
 		} else {
 			return badRequest(Messages.get("quiz.no-end-result"));
