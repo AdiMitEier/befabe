@@ -9,7 +9,7 @@ import highscore.generated.Quiz;
 
 
 /**
- * <p>Java-Klasse f�r HighScoreRequestType complex type.
+ * <p>Java-Klasse.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 

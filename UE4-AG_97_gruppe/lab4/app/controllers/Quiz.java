@@ -17,11 +17,18 @@ import views.html.quiz.index;
 import views.html.quiz.quiz;
 import views.html.quiz.quizover;
 import views.html.quiz.roundover;
+import highscore.Failure;
+import highscore.ObjectFactory;
+import highscore.PublishHighScoreEndpoint;
+import highscore.PublishHighScoreService;
+import highscore.data.HighScoreRequestType;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import javax.xml.ws.Service;
 
 @Security.Authenticated(Secured.class)
 public class Quiz extends Controller {
@@ -170,6 +177,23 @@ public class Quiz extends Controller {
 			}
 			play.Logger.info(winner.toString() +"/"+ winner.getName().toString());
 			play.Logger.info(loser.toString() +"/"+ loser.getName().toString());
+			PublishHighScoreService highScoreService = new PublishHighScoreService();
+			PublishHighScoreEndpoint port = highScoreService.getPublishHighScorePort();
+			
+			highscore.data.ObjectFactory dataFactory = new highscore.data.ObjectFactory();
+			HighScoreRequestType in = dataFactory.createHighScoreRequestType();
+			
+			//highscore.generated.ObjectFactory genFactory = new highscore.generated.ObjectFactory();
+			
+			
+			
+			try {
+				port.publishHighScore(in);
+			} catch (Failure e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			
 			return ok(quizover.render(game));
 		} else {
