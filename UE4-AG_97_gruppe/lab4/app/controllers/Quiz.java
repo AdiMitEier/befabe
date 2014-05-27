@@ -1,6 +1,7 @@
 package controllers;
 
 import models.*;
+import models.QuizUser.Gender;
 import play.Logger;
 import play.Play;
 import play.api.Application;
@@ -18,17 +19,21 @@ import views.html.quiz.quiz;
 import views.html.quiz.quizover;
 import views.html.quiz.roundover;
 import highscore.Failure;
-import highscore.ObjectFactory;
 import highscore.PublishHighScoreEndpoint;
 import highscore.PublishHighScoreService;
 import highscore.data.HighScoreRequestType;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.ws.Service;
+
 
 @Security.Authenticated(Secured.class)
 public class Quiz extends Controller {
@@ -47,6 +52,7 @@ public class Quiz extends Controller {
 	private static QuizGame createNewGame() {
 		List<Category> allCategories = QuizDAO.INSTANCE.findEntities(Category.class);
 		Logger.info("Start game with " + allCategories.size() + " categories.");
+		//Logger.info(user().getFirstName());
 		QuizGame game = new QuizGame(allCategories);
 		game.startNewRound();
 		cacheGame(game);
@@ -167,34 +173,66 @@ public class Quiz extends Controller {
 	public static Result endResult() {
 		QuizGame game = cachedGame();
 		if (game != null && isGameOver(game)) {
+			/*
 			QuizUser winner = game.getWinner();
+			//evaluate loser
 			List<QuizUser> players = game.getPlayers();
-			QuizUser loser = null;
-			
+			QuizUser loser = null;			
 			for(QuizUser p:players){
 				if(!p.equals(winner))
 					loser=p;
 			}
-			play.Logger.info(winner.toString() +"/"+ winner.getName().toString());
-			play.Logger.info(loser.toString() +"/"+ loser.getName().toString());
-			PublishHighScoreService highScoreService = new PublishHighScoreService();
-			PublishHighScoreEndpoint port = highScoreService.getPublishHighScorePort();
-			
-			highscore.data.ObjectFactory dataFactory = new highscore.data.ObjectFactory();
-			HighScoreRequestType in = dataFactory.createHighScoreRequestType();
-			
-			//highscore.generated.ObjectFactory genFactory = new highscore.generated.ObjectFactory();
-			
-			
-			
-			try {
-				port.publishHighScore(in);
-			} catch (Failure e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if(loser.getName().equals("Spieler 2")){
+				loser.setFirstName("Robby");
+				loser.setLastName("Robot");
 			}
+			if(winner.getName().equals("Spieler 2")){
+				winner.setFirstName("Robby");
+				winner.setLastName("Robot");
+			}
+			play.Logger.info(loser.getFirstName());
+			play.Logger.info(winner.getFirstName());
+			//play.Logger.info(QuizDAO.INSTANCE.findByUserName(winner.getName()).toString());
+			//play.Logger.info(QuizDAO.INSTANCE.findByUserName(loser.getName()).toString());
+			*/
+			//following user are just for testing purposes
+			QuizUser winner = new QuizUser();
+			QuizUser loser = new QuizUser();
+			Date date = new Date();
+			winner.setBirthDate(date);
+			winner.setFirstName("asdf");
+			winner.setLastName("asdf");
+			winner.setGender(Gender.female);
+			winner.setPassword("asdf");
+			winner.setName("winner");
+			loser.setBirthDate(date);
+			loser.setFirstName("Robby");
+			loser.setLastName("Robot");
+			loser.setGender(Gender.male);
+			loser.setPassword("asdf");
+			loser.setName("loser");
 			
-			
+			try {				
+				PublishHighScoreService highScoreService = new PublishHighScoreService();
+				//from this port methods can be called, rpc-style
+				PublishHighScoreEndpoint port = highScoreService.getPublishHighScorePort();
+				
+				highscore.data.ObjectFactory dataFactory = new highscore.data.ObjectFactory();
+				HighScoreRequestType in = dataFactory.createHighScoreRequestType();				
+				
+				//building up quiz with users (loser,winner) to pass them to the HighscoreRequestType in
+				//and publishing it to the endpoint
+				String uuid = port.publishHighScore(buildHighScoreRequest(in, loser, winner));
+				
+				play.Logger.info(uuid);
+				
+			} catch (Failure e) {
+				play.Logger.info("Failure occured: " + e.getMessage());
+				return ok(quizover.render(game));
+			} catch (Exception e1){
+				play.Logger.info("Exception occured: " + e1.getMessage());
+				return ok(quizover.render(game));
+			}			
 			return ok(quizover.render(game));
 		} else {
 			return badRequest(Messages.get("quiz.no-end-result"));
@@ -236,6 +274,54 @@ public class Quiz extends Controller {
 
 	private static Application application() {
 		return Play.application().getWrappedApplication();
+	}
+	
+	private static HighScoreRequestType buildHighScoreRequest(HighScoreRequestType in, QuizUser winner, QuizUser loser) throws DatatypeConfigurationException{
+		highscore.generated.ObjectFactory genFactory = new highscore.generated.ObjectFactory();
+		highscore.generated.Quiz quiz = genFactory.createQuiz();
+		highscore.generated.Users users = genFactory.createUsers();
+		highscore.generated.User l = genFactory.createUser();
+		highscore.generated.Gender gw = highscore.generated.Gender.MALE;
+		switch (winner.getGender()){
+			case female:
+				gw = highscore.generated.Gender.FEMALE;
+			case male:
+				gw = highscore.generated.Gender.MALE;
+		}
+		highscore.generated.User w = genFactory.createUser();
+		highscore.generated.Gender gl = highscore.generated.Gender.MALE;			
+		switch (loser.getGender()){
+			case female:
+				gl = highscore.generated.Gender.FEMALE;
+			case male:
+				gl = highscore.generated.Gender.MALE;
+		}
+		
+		l.setGender(gl);
+		GregorianCalendar c = new GregorianCalendar();
+		c.setTime(loser.getBirthDate());				
+		l.setBirthdate(DatatypeFactory.newInstance().newXMLGregorianCalendar(c));
+		l.setFirstname(loser.getFirstName());
+		l.setLastname(loser.getLastName());
+		l.setName("loser");			
+		l.setPassword(loser.getPassword());
+		
+		c = new GregorianCalendar();
+		c.setTime(winner.getBirthDate());
+		w.setBirthdate(DatatypeFactory.newInstance().newXMLGregorianCalendar(c));
+		w.setFirstname(winner.getFirstName());
+		w.setLastname(winner.getLastName());
+		w.setName("winner");
+		w.setGender(gw);
+		w.setPassword(winner.getPassword());
+				
+		users.getUser().add(w);
+		users.getUser().add(l);
+		
+		quiz.setUsers(users);
+		in.setQuiz(quiz);
+		in.setUserKey("rkf4394dwqp49x");
+		return in;		
 	}
 
 }
