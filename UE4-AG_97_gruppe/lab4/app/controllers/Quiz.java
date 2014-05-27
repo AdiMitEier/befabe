@@ -14,6 +14,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
 import scala.Option;
+import twitter.TwitterClient;
+import twitter.TwitterStatusMessage;
 import views.html.quiz.index;
 import views.html.quiz.quiz;
 import views.html.quiz.quizover;
@@ -232,7 +234,8 @@ public class Quiz extends Controller {
 			} catch (Exception e1){
 				play.Logger.info("Exception occured: " + e1.getMessage());
 				return ok(quizover.render(game));
-			}			
+			}
+			tweetResult();
 			return ok(quizover.render(game));
 		} else {
 			return badRequest(Messages.get("quiz.no-end-result"));
@@ -323,6 +326,17 @@ public class Quiz extends Controller {
 		in.setUserKey("rkf4394dwqp49x");
 		//play.Logger.info(in.toString());
 		return in;		
+	}
+	
+	private static void tweetResult() {
+		TwitterClient twitterClient = new TwitterClient();
+		TwitterStatusMessage twitterStatusMessage = new TwitterStatusMessage(user().getUserName(), "uuid", new Date());
+		try {
+			twitterClient.publishUuid(twitterStatusMessage);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
