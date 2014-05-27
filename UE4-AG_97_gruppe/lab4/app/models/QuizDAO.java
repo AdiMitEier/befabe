@@ -44,15 +44,9 @@ public class QuizDAO implements IQuizDAO {
      * @return
      */
     private QuizUser getByUserName(String name) {
-        String queryStr = "from QuizUser where userName = :userName";
-        TypedQuery<QuizUser> query = em().createQuery(queryStr,
-                QuizUser.class).setParameter("userName", name);
-        List<QuizUser> list = query.getResultList();
-        if (list.isEmpty()) {
-            return null;
-        } else {
-            return list.get(0);
-        }
+    	TypedQuery<QuizUser> quizUserTypedQuery = em().createQuery("Select u from QuizUser u where userName LIKE :userName", QuizUser.class);    	
+    	quizUserTypedQuery.setParameter("userName", name);
+    	return quizUserTypedQuery.getSingleResult();
     }
 
 
