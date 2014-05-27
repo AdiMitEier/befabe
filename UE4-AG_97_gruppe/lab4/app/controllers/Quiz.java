@@ -203,13 +203,13 @@ public class Quiz extends Controller {
 			winner.setFirstName("asdf");
 			winner.setLastName("asdf");
 			winner.setGender(Gender.female);
-			winner.setPassword("asdf");
+			winner.setPassword("");
 			winner.setName("winner");
 			loser.setBirthDate(date);
 			loser.setFirstName("Robby");
 			loser.setLastName("Robot");
 			loser.setGender(Gender.male);
-			loser.setPassword("asdf");
+			loser.setPassword("");
 			loser.setName("loser");
 			
 			try {				
@@ -222,7 +222,7 @@ public class Quiz extends Controller {
 				
 				//building up quiz with users (loser,winner) to pass them to the HighscoreRequestType in
 				//and publishing it to the endpoint
-				String uuid = port.publishHighScore(buildHighScoreRequest(in, loser, winner));
+				String uuid = port.publishHighScore(buildHighScoreRequest(in, winner, loser));
 				
 				play.Logger.info(uuid);
 				
@@ -306,13 +306,13 @@ public class Quiz extends Controller {
 		l.setName("loser");			
 		l.setPassword(loser.getPassword());
 		
+		w.setGender(gw);
 		c = new GregorianCalendar();
 		c.setTime(winner.getBirthDate());
 		w.setBirthdate(DatatypeFactory.newInstance().newXMLGregorianCalendar(c));
 		w.setFirstname(winner.getFirstName());
 		w.setLastname(winner.getLastName());
 		w.setName("winner");
-		w.setGender(gw);
 		w.setPassword(winner.getPassword());
 				
 		users.getUser().add(w);
@@ -321,6 +321,7 @@ public class Quiz extends Controller {
 		quiz.setUsers(users);
 		in.setQuiz(quiz);
 		in.setUserKey("rkf4394dwqp49x");
+		//play.Logger.info(in.toString());
 		return in;		
 	}
 
