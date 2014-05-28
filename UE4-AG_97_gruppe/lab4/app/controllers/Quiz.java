@@ -52,7 +52,6 @@ public class Quiz extends Controller {
 	private static QuizGame createNewGame() {
 		List<Category> allCategories = QuizDAO.INSTANCE.findEntities(Category.class);
 		Logger.info("Start game with " + allCategories.size() + " categories.");
-		//Logger.info(user().getFirstName());
 		QuizGame game = new QuizGame(allCategories);
 		game.startNewRound();
 		cacheGame(game);
@@ -173,10 +172,9 @@ public class Quiz extends Controller {
 	public static Result endResult() {
 		QuizGame game = cachedGame();
 		if (game != null && isGameOver(game)) {
-			/*
 			QuizUser winner = game.getWinner();
 			//evaluate loser
-			List<QuizUser> players = game.getPlayers();
+			List<QuizUser> players = game.getPlayers();			
 			QuizUser loser = null;			
 			for(QuizUser p:players){
 				if(!p.equals(winner))
@@ -185,32 +183,23 @@ public class Quiz extends Controller {
 			if(loser.getName().equals("Spieler 2")){
 				loser.setFirstName("Robby");
 				loser.setLastName("Robot");
+				loser.setGender(Gender.male);
+				Date date = new Date();
+				loser.setBirthDate(date);
 			}
 			if(winner.getName().equals("Spieler 2")){
 				winner.setFirstName("Robby");
 				winner.setLastName("Robot");
+				winner.setGender(Gender.male);
+				Date date = new Date();
+				winner.setBirthDate(date);
 			}
-			play.Logger.info(loser.getFirstName());
-			play.Logger.info(winner.getFirstName());
-			//play.Logger.info(QuizDAO.INSTANCE.findByUserName(winner.getName()).toString());
-			//play.Logger.info(QuizDAO.INSTANCE.findByUserName(loser.getName()).toString());
-			*/
-			//following user are just for testing purposes
-			QuizUser winner = new QuizUser();
-			QuizUser loser = new QuizUser();
-			Date date = new Date();
-			winner.setBirthDate(date);
-			winner.setFirstName("asdf");
-			winner.setLastName("asdf");
-			winner.setGender(Gender.female);
-			winner.setPassword("");
-			winner.setName("winner");
-			loser.setBirthDate(date);
-			loser.setFirstName("Robby");
-			loser.setLastName("Robot");
-			loser.setGender(Gender.male);
-			loser.setPassword("");
-			loser.setName("loser");
+			if(winner.getName().equals("Spieler 1")){
+				winner = user();
+			}
+			if(loser.getName().equals("Spieler 1")){
+				loser = user();
+			}			
 			
 			try {				
 				PublishHighScoreService highScoreService = new PublishHighScoreService();
@@ -223,8 +212,8 @@ public class Quiz extends Controller {
 				//building up quiz with users (loser,winner) to pass them to the HighscoreRequestType in
 				//and publishing it to the endpoint
 				String uuid = port.publishHighScore(buildHighScoreRequest(in, winner, loser));
-				
-				play.Logger.info(uuid);
+				session("uuid", uuid);
+				play.Logger.info(session("uuid"));
 				
 			} catch (Failure e) {
 				play.Logger.info("Failure occured: " + e.getMessage());
@@ -304,7 +293,7 @@ public class Quiz extends Controller {
 		l.setFirstname(loser.getFirstName());
 		l.setLastname(loser.getLastName());
 		l.setName("loser");			
-		l.setPassword(loser.getPassword());
+		l.setPassword("");
 		
 		w.setGender(gw);
 		c = new GregorianCalendar();
@@ -313,7 +302,7 @@ public class Quiz extends Controller {
 		w.setFirstname(winner.getFirstName());
 		w.setLastname(winner.getLastName());
 		w.setName("winner");
-		w.setPassword(winner.getPassword());
+		w.setPassword("");
 				
 		users.getUser().add(w);
 		users.getUser().add(l);
