@@ -224,7 +224,7 @@ public class Quiz extends Controller {
 				play.Logger.info("Exception occured: " + e1.getMessage());
 				return ok(quizover.render(game));
 			}
-			tweetResult();
+			publishUuid(session("uuid"));
 			return ok(quizover.render(game));
 		} else {
 			return badRequest(Messages.get("quiz.no-end-result"));
@@ -317,9 +317,9 @@ public class Quiz extends Controller {
 		return in;		
 	}
 	
-	private static void tweetResult() {
+	private static void publishUuid(String uuid) {
 		TwitterClient twitterClient = new TwitterClient();
-		TwitterStatusMessage twitterStatusMessage = new TwitterStatusMessage(user().getUserName(), "uuid", new Date());
+		TwitterStatusMessage twitterStatusMessage = new TwitterStatusMessage(user().getUserName(), uuid, new Date());
 		try {
 			twitterClient.publishUuid(twitterStatusMessage);
 		} catch (Exception e) {
