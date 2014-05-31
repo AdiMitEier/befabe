@@ -15,6 +15,11 @@
             <section id="roundwinner" aria-labelledby="roundwinnerheading">
                 <h2 id="roundwinnerheading" class="accessibility">@Messages("quiz.result")</h2>
                 <p class="roundwinnermessage">@winnerMessage</p>
+                @if(flash.contains("twitter.result")) {
+		 			<p class="registration.successful">
+		        		@flash.get("twitter.result")
+		    		</p>
+				}
             </section>
         
             <!-- round info -->    
