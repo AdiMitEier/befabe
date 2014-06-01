@@ -25,6 +25,7 @@ import highscore.PublishHighScoreEndpoint;
 import highscore.PublishHighScoreService;
 import highscore.data.HighScoreRequestType;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -41,6 +42,7 @@ import at.ac.tuwien.big.we14.lab4.dbpedia.api.DBPediaService;
 import at.ac.tuwien.big.we14.lab4.dbpedia.api.SelectQueryBuilder;
 import at.ac.tuwien.big.we14.lab4.dbpedia.vocabulary.DBPedia;
 import at.ac.tuwien.big.we14.lab4.dbpedia.vocabulary.DBPediaOWL;
+
 
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -65,17 +67,20 @@ public class Quiz extends Controller {
 
 	@play.db.jpa.Transactional(readOnly = true)
 	private static QuizGame createNewGame() {
-//		List<Category> allCategories = QuizDAO.INSTANCE.findEntities(Category.class);
+		List<Category> allCategories = QuizDAO.INSTANCE.findEntities(Category.class);
 
-		List<Category> allCategories = new ArrayList<Category>();
+/*		List<Category> allCategories = new ArrayList<Category>();
 		Logger.info("Select questions from dbedia category");
 		Category dbpediaCategory = createDBPediaCategory();
 		if(dbpediaCategory != null){
 			allCategories.add(dbpediaCategory);
 			Logger.info("DBPedia Category added");
 		}
+		
+	*/
 		Logger.info("Start game with " + allCategories.size() + " categories.");
 		QuizGame game = new QuizGame(allCategories);
+		Logger.info(allCategories.size()+"");
 		game.startNewRound();
 		cacheGame(game);
 		return game;
@@ -349,92 +354,5 @@ public class Quiz extends Controller {
 		}
 	}
 	
-	private static Category createDBPediaCategory() {
-		Logger.info("check if dbpedia is available");
-		if(!DBPediaService.isAvailable()){
-			Logger.info("DBPedia is currently not available");
-			return null;
-		}
-		
-		// create new category
-		Logger.info("Get Tim Burton ");
-		Resource artist = DBPediaService.loadStatements(DBPedia.createResource("Tim_Burton"));
-		String englishArtistName = DBPediaService.getResourceName(artist, Locale.ENGLISH);
-		String germanArtistName = DBPediaService.getResourceName(artist, Locale.GERMAN);
-		
-		Logger.info(germanArtistName);
-		SelectQueryBuilder artistQuery = DBPediaService.createQueryBuilder()
-				.setLimit(5)
-				.addWhereClause(RDF.type, DBPediaOWL.Film)
-				.addPredicateExistsClause(FOAF.name)
-				.addWhereClause(DBPediaOWL.director, artist)
-				.addFilterClause(RDFS.label, Locale.GERMAN)
-				.addFilterClause(RDFS.label, Locale.ENGLISH)
-				;
-		
-		Logger.info("create category");
-		Category category = new Category();
-		category.setName("Film", Locale.GERMAN.toString());
-		category.setName("Film", Locale.ENGLISH.toString());
-		
-		// create Question for category
-		Logger.info("create Question");
-		Question movieWithTimBurton = createQuestion("Tim Burton's Films", "Tim Burtons Filme", category);
-		category.addQuestion(movieWithTimBurton);
-		movieWithTimBurton.setCategory(category);
-		
-		Model timBurtonMovies = DBPediaService.loadStatements(artistQuery.toQueryString());
-		Model noTimBurtonMovies = DBPediaService.loadStatements(artistQuery.toQueryString());
-
 	
-		// add wrong and right choices to question
-		Logger.info("add choices");
-		addChoicesToQuestion(movieWithTimBurton, 
-				DBPediaService.getResourceNames(timBurtonMovies, Locale.ENGLISH),
-				DBPediaService.getResourceNames(timBurtonMovies, Locale.GERMAN),
-				DBPediaService.getResourceNames(noTimBurtonMovies, Locale.ENGLISH),
-				DBPediaService.getResourceNames(noTimBurtonMovies, Locale.GERMAN)
-				);
-
-		
-		return category;	
-	}
-	
-	
-	private static Question createQuestion(String textEN, String textDE, Category category){
-		Question question = new Question();
-		question.setCategory(category);
-		question.setTextEN(textEN);
-		question.setTextDE(textDE);
-	
-		return question;
-	}
-	
-	
-	private static void addChoicesToQuestion(Question question, List<String> rightChoiceEN, List<String> rightChoiceDE, List<String> wrongChoiceEN, List<String> wrongChoiceDE){
-		
-		//create right choices and add to question
-		for(int i = 0; i < rightChoiceEN.size(); i++ ){
-			Choice right = new Choice();
-			right.setTextDE(rightChoiceDE.get(i));
-			right.setTextEN(rightChoiceEN.get(i));
-			right.setCorrectAnswer(true);
-			right.setQuestion(question);
-			question.addRightChoice(right);
-			Logger.info(right.toString());
-		}
-		
-		//create wrong choices and add to question
-		for(int i = 0; i < wrongChoiceEN.size(); i++ ){
-			Choice wrong = new Choice();
-			wrong.setTextDE(wrongChoiceDE.get(i));
-			wrong.setTextEN(wrongChoiceEN.get(i));
-			wrong.setCorrectAnswer(false);
-			wrong.setQuestion(question);
-			question.addWrongChoice(wrong);
-			Logger.info(wrong.toString());
-		}				
-	}
-	
-
 }

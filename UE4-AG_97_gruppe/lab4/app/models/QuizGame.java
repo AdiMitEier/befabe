@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import play.Logger;
+
 public class QuizGame {
 	private static int NUM_ROUNDS = 5;
 	private static int NUM_QUESTIONS = 3;
@@ -79,8 +81,8 @@ public class QuizGame {
 	public void startNewRound() {
 		Category category = chooseCategory();
 
-        //Category might not be attached to Peristence Context any more - reattach if necessary
-        category = QuizDAO.INSTANCE.merge(category);
+		//Category might not be attached to Peristence Context any more - reattach if necessary
+		category = QuizDAO.INSTANCE.merge(category);
 
 		List<Question> questions = chooseQuestions(category);
 		Round round = new Round();
@@ -90,14 +92,18 @@ public class QuizGame {
 
 	private Category chooseCategory() {
 		List<Category> availableCategories = getAvailableCategories();
-		int randomCategoryIndex = (int) round(random()
-				* maxIndex(availableCategories));
-		Category category = availableCategories.get(randomCategoryIndex);
-		chosenCategories.add(category);
+		Category category = new Category();
+		if(availableCategories.size() > 0){
+			int randomCategoryIndex = (int) round(random()
+					* maxIndex(availableCategories));
+			category = availableCategories.get(randomCategoryIndex);
+			chosenCategories.add(category);
+		}
 		return category;
 	}
 
 	private List<Category> getAvailableCategories() {
+
 		if (chosenCategories.size() == categories.size())
 			chosenCategories.clear();
 		List<Category> availableCategories = new ArrayList<Category>();
@@ -188,7 +194,7 @@ public class QuizGame {
 					if (round.getRoundWinner() != null && round.getRoundWinner().equals(player))
 						count++;
 				}
-				
+
 				if (count > bestCount) {
 					bestUsers.clear();
 					bestUsers.add(player);
