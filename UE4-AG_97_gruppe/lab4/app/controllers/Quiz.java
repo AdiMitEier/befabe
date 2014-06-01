@@ -69,15 +69,7 @@ public class Quiz extends Controller {
 	private static QuizGame createNewGame() {
 		List<Category> allCategories = QuizDAO.INSTANCE.findEntities(Category.class);
 
-/*		List<Category> allCategories = new ArrayList<Category>();
-		Logger.info("Select questions from dbedia category");
-		Category dbpediaCategory = createDBPediaCategory();
-		if(dbpediaCategory != null){
-			allCategories.add(dbpediaCategory);
-			Logger.info("DBPedia Category added");
-		}
-		
-	*/
+
 		Logger.info("Start game with " + allCategories.size() + " categories.");
 		QuizGame game = new QuizGame(allCategories);
 		Logger.info(allCategories.size()+"");
@@ -287,6 +279,7 @@ public class Quiz extends Controller {
 			uuid = UUID.randomUUID().toString();
 			session("uuid", uuid);
 		}
+		Logger.info(uuid);
 		return uuid;
 	}
 

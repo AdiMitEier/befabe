@@ -40,7 +40,7 @@ public class Global extends GlobalSettings {
 		InputSupplier<FileInputStream> inputStreamSupplier = 
 				Files.newInputStreamSupplier(file);
 		FileInputStream inputStream = inputStreamSupplier.getInput();
-		//JSONDataInserter.insertData(inputStream);
+		JSONDataInserter.insertData(inputStream);
 		Logger.info("Data from json file '" + file.getName() + "' inserted.");
 		QuizDAO.INSTANCE.persist(createDBPediaCategory());
 		Logger.info("Data from DBPedia inserted");
