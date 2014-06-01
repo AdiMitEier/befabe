@@ -55,3 +55,6 @@ quiz.no-current-question=Currently, there is no question.
 quiz.no-round-result=Currently, there is no round result.
 quiz.no-end-result=Currently, there is no quiz result.
 quiz.no-round-ended=Currently, there is no ended round.
+
+twitter.published-uuid=Published UUID {0} on Twitter.
+twitter.exception=UUID {0} couldn't be published on Twitter.

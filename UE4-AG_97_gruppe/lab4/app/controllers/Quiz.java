@@ -348,8 +348,13 @@ public class Quiz extends Controller {
 		TwitterStatusMessage twitterStatusMessage = new TwitterStatusMessage(user().getUserName(), uuid, new Date());
 		try {
 			twitterClient.publishUuid(twitterStatusMessage);
+			String resultMessage = Messages.get("twitter.published-uuid", uuid);
+			Logger.info(resultMessage);
+			flash("twitter.result",resultMessage);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			String resultMessage = Messages.get("twitter.exception", uuid);
+			Logger.info(resultMessage);
+			flash("twitter.result",resultMessage);
 			e.printStackTrace();
 		}
 	}
