@@ -78,7 +78,6 @@ public class Global extends GlobalSettings {
 
 		// create new category
 
-		Logger.info("create dpedia category");
 		Category movies = new Category();
 		movies.setNameDE("Filme");
 		movies.setNameEN("Movies");
@@ -107,14 +106,11 @@ public class Global extends GlobalSettings {
 
 		Model moviesMurnbergerQuery = DBPediaService.loadStatements(murnbergerQuery.toQueryString());
 
-		Logger.info(murnbergerQuery.toQueryString());
 
 		murnbergerQuery.removeWhereClause(DBPediaOWL.director, directorMurnberger);
 		murnbergerQuery.addMinusClause(DBPediaOWL.director, directorMurnberger);
 
 		Model moviesNonMurnbergerQuery = DBPediaService.loadStatements(murnbergerQuery.toQueryString());
-
-		Logger.info(murnbergerQuery.toQueryString());
 
 		Question murnbergerMovies = createQuestion("In which movies was Wolfgang Murnberger director?",
 				"In welchen Filmen hat Wolfgang Murnberger Regie geführt?",
@@ -148,15 +144,13 @@ public class Global extends GlobalSettings {
 
 		Model moviesHanekeQuery = DBPediaService.loadStatements(hanekeQuery.toQueryString());
 
-		Logger.info(hanekeQuery.toQueryString());
 
 		hanekeQuery.removeWhereClause(DBPediaOWL.director, director);
 		hanekeQuery.addMinusClause(DBPediaOWL.director, director);
 
 		Model moviesNonHanekeQuery = DBPediaService.loadStatements(hanekeQuery.toQueryString());
 
-		Logger.info(hanekeQuery.toQueryString());
-
+	
 		Question hanekeMovies = createQuestion("In which movies was Michael Haneke director?",
 				"In welchen Filmen hat Michael Haneke Regie geführt?",
 				movies,
@@ -193,7 +187,6 @@ public class Global extends GlobalSettings {
 
 		//Model haderMovieQuery = DBPediaService.loadStatements("SELECT ?film	WHERE { ?film <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Josef_Hader> }");
 
-		Logger.info(bierbichlerQuery.toQueryString());
 
 		bierbichlerQuery.removeWhereClause(DBPediaOWL.starring, bierbichler);
 		bierbichlerQuery.addMinusClause(DBPediaOWL.starring, bierbichler);
@@ -201,8 +194,7 @@ public class Global extends GlobalSettings {
 
 		Model nonbierbichlerMovieQuery = DBPediaService.loadStatements(bierbichlerQuery.toQueryString());
 
-		Logger.info(bierbichlerQuery.toQueryString());
-
+	
 		Question dorferActors = createQuestion("In which movies did Josef Bierbichler starr?",
 				"In welchen Filmen hat Josef Bierbichler mitgespielt?",
 				movies,
@@ -239,15 +231,12 @@ public class Global extends GlobalSettings {
 
 		//Model haderMovieQuery = DBPediaService.loadStatements("SELECT ?film	WHERE { ?film <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Josef_Hader> }");
 
-		Logger.info(haderQuery.toQueryString());
-
+	
 		haderQuery.removeWhereClause(DBPediaOWL.writer, actor);
 		haderQuery.addMinusClause(DBPediaOWL.writer, actor);
 		haderQuery.setLimit(4);
 
 		Model nonHaderMovieQuery = DBPediaService.loadStatements(haderQuery.toQueryString());
-
-		Logger.info(haderQuery.toQueryString());
 
 		Question haderActors = createQuestion("In which movies did Josef Hader starr and write the script?",
 				"In welchen Filmen hat Josef Hader mitgespielt und das Drehbuch geschrieben?",
@@ -279,15 +268,12 @@ public class Global extends GlobalSettings {
 
 		Model antelMovieQuery = DBPediaService.loadStatements(antelQuery.toQueryString());
 
-		Logger.info(antelQuery.toQueryString());
 
 		antelQuery.removeWhereClause(DBPediaOWL.director, directorAntel);
 		antelQuery.addMinusClause(DBPediaOWL.director, directorAntel);
 		antelQuery.setLimit(4);
 
 		Model nonantelMovieQuery = DBPediaService.loadStatements(antelQuery.toQueryString());
-
-		Logger.info(antelQuery.toQueryString());
 
 		Question antelActors = createQuestion("Which movies where directed by Franz Antel?",
 				"In welchen Filmen hat Franz Antel Regie geführt?",
@@ -328,7 +314,7 @@ public class Global extends GlobalSettings {
 			right.setCorrectAnswer(true);
 			right.setQuestion(question);
 			question.addRightChoice(right);
-			Logger.info(right.getTextDE());
+
 		}
 
 		//create wrong choices and add to question
@@ -340,7 +326,6 @@ public class Global extends GlobalSettings {
 			wrong.setQuestion(question);
 			question.addWrongChoice(wrong);
 
-			Logger.info(wrong.getTextDE());
 		}				
 	}
 
